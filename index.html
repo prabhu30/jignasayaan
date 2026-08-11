@@ -1,0 +1,1287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JIGNASAYAAN — The Modern Desayatana | This Time for Keralam</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@300;400;500;600;700;800&family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
+<script>
+tailwind.config={
+  theme:{
+    extend:{
+      colors:{
+        midnight:'#081B33',
+        emerald:'#0F8B6F',
+        saffron:'#F28C28',
+        ivory:'#FAFAF7',
+        golden:'#E9B949',
+        charcoal:'#111111',
+      },
+      fontFamily:{
+        sora:['Sora','sans-serif'],
+        inter:['Inter','sans-serif'],
+        space:['Space Grotesk','sans-serif'],
+        display:['Cormorant Garamond','serif']
+      }
+    }
+  }
+}
+</script>
+<style>
+*{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:#FAFAF7;color:#111111;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Sora',sans-serif;letter-spacing:-0.02em}
+::selection{background:#0F8B6F;color:white}
+.glass{backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(255,255,255,0.78);border:1px solid rgba(255,255,255,0.3)}
+.glass-dark{backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);background:rgba(8,27,51,0.72);border:1px solid rgba(255,255,255,0.08)}
+.marquee{white-space:nowrap;animation:marquee 22s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(24px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.parallax-img{will-change:transform}
+.shimmer{position:relative;overflow:hidden}
+.shimmer::after{content:'';position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);animation:shimmer 2.8s infinite}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+.train-track{height:100%;width:2px;background:linear-gradient(to bottom, #0F8B6F, #F28C28, #081B33);opacity:0.18;position:absolute;left:50%;transform:translateX(-50%)}
+@media(max-width:768px){.train-track{left:20px}}
+.magnetic{transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.custom-scrollbar::-webkit-scrollbar{height:4px;width:4px}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:#0F8B6F;border-radius:999px}
+.masonry{column-count:3;column-gap:1rem}
+@media(max-width:1024px){.masonry{column-count:2}}
+@media(max-width:640px){.masonry{column-count:1}}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none}
+</style>
+</head>
+<body class="antialiased selection:bg-emerald selection:text-white">
+<!-- Top Eyebrow -->
+<div class="w-full bg-midnight text-ivory text-[11px] tracking-[0.18em] font-semibold py-2.5 px-4 flex justify-between items-center relative z-50">
+  <div class="flex items-center gap-3">
+    <span class="hidden md:inline-flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald rounded-full animate-pulse"></span> EXPEDITION 2026 — REGISTRATIONS OPEN</span>
+    <span class="md:hidden flex items-center gap-2"><span class="w-1.5 h-1.5 bg-emerald rounded-full animate-pulse"></span> 2026 REGISTRATIONS OPEN</span>
+  </div>
+  <div class="hidden md:flex items-center gap-6 font-medium tracking-wide text-[11px] opacity-80">
+    <span class="flex items-center gap-1.5"><i class="ri-phone-line"></i> +91 90000 11223</span>
+    <span class="flex items-center gap-1.5"><i class="ri-mail-line"></i> yaan@jignasayaan.in</span>
+  </div>
+  <a  href="#" onclick="openRegister(); return false;" class="bg-saffron text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest hover:bg-[#e07d1f] transition">APPLY NOW →</a>
+</div>
+
+<!-- Navigation -->
+<nav id="navbar" class="sticky top-0 z-40 border-b border-black/[0.06] glass">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 h-[72px] flex items-center justify-between">
+    <a  href="#home" class="flex items-center gap-3">
+      <div class="w-10 h-10 bg-midnight rounded-xl flex items-center justify-center text-white font-sora font-bold text-[13px] leading-none">J<span class="text-golden">Y</span></div>
+      <div class="leading-none">
+        <div class="font-sora font-extrabold tracking-[0.14em] text-[15px] text-midnight">JIGNASAYAAN</div>
+        <div class="text-[10px] tracking-[0.22em] font-semibold text-emerald -mt-0.5">THE MODERN DESAYATANA</div>
+      </div>
+    </a>
+    <div class="hidden lg:flex items-center gap-7 text-[13px] font-medium tracking-wide">
+      <a  href="#about" class="hover:text-emerald transition">About</a>
+      <a  href="#why" class="hover:text-emerald transition">Why Jignasa</a>
+      <a  href="#keralam" class="hover:text-emerald transition">For Keralam</a>
+      <a  href="#journey" class="hover:text-emerald transition">Journey</a>
+      <a  href="#destinations" class="hover:text-emerald transition">Destinations</a>
+      <a  href="#experience" class="hover:text-emerald transition">Experience</a>
+      <a  href="#gallery" class="hover:text-emerald transition">Gallery</a>
+      <div class="h-6 w-px bg-black/10"></div>
+      <a  href="#parents" class="hover:text-emerald transition flex items-center gap-1">Parents <i class="ri-shield-check-line text-emerald"></i></a>
+      <a  href="#parents" class="text-midnight/60 hover:text-midnight transition">Sponsors</a>
+    </div>
+    <div class="flex items-center gap-3">
+      <button onclick="openVideo()" class="hidden md:inline-flex items-center gap-2 text-sm font-semibold px-5 py-2.5 rounded-full border border-black/10 hover:bg-black hover:text-white transition"><i class="ri-play-circle-line text-lg"></i> Watch Film</button>
+      <button onclick="openRegister()" class="bg-midnight text-white px-6 py-3 rounded-full text-sm font-bold tracking-wide hover:bg-black transition shadow-lg shadow-midnight/20 magnetic">Join Expedition</button>
+      <button id="menuBtn" class="lg:hidden w-10 h-10 rounded-full border border-black/10 flex items-center justify-center"><i class="ri-menu-line text-xl"></i></button>
+    </div>
+  </div>
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden lg:hidden border-t border-black/5 bg-white">
+    <div class="px-4 py-6 grid grid-cols-2 gap-3 text-sm font-medium">
+      <a  href="#about" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">About</a>
+      <a  href="#keralam" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">This Time for Keralam</a>
+      <a  href="#journey" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Journey</a>
+      <a  href="#destinations" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Destinations</a>
+      <a  href="#experience" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Experience</a>
+      <a  href="#gallery" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Gallery</a>
+      <a  href="#parents" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Parent Zone</a>
+      <a  href="#parents" class="py-3 px-4 bg-[#F5F7FA] rounded-xl">Sponsors</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="relative overflow-hidden bg-midnight">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=2000&auto=format&fit=crop" alt="Kerala Backwaters" class="w-full h-full object-cover opacity-90 parallax-img scale-[1.04]">
+    <div class="absolute inset-0 bg-gradient-to-b from-midnight/20 via-midnight/30 to-midnight/85"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-midnight/60 via-transparent to-transparent"></div>
+    <!-- grain -->
+    <div class="absolute inset-0 opacity-[0.07]" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg')"></div>
+  </div>
+
+  <!-- floating info -->
+  <div class="relative max-w-[1440px] mx-auto px-4 md:px-8 pt-10 md:pt-14 pb-10">
+    <div class="grid lg:grid-cols-[1.15fr_0.85fr] gap-8 items-end min-h-[78vh]">
+      <!-- Left Content -->
+      <div class="relative z-10">
+        <div class="inline-flex items-center gap-3 glass-dark rounded-full px-4 py-2 text-ivory/90 text-xs tracking-widest font-semibold mb-6">
+          <span class="w-2 h-2 bg-emerald rounded-full animate-pulse shadow-[0_0_10px_rgba(15,139,111,0.8)]"></span>
+          SOUTH INDIA'S LARGEST STUDENT YAAN • 5TH EDITION
+          <span class="hidden md:inline-flex ml-2 bg-white text-midnight px-2.5 py-1 rounded-full text-[10px] font-extrabold tracking-widest">SOUTH FOR BHARAT</span>
+        </div>
+
+        <h1 class="font-sora font-extrabold leading-[0.9] tracking-[-0.04em] text-white">
+          <span class="block text-[14px] md:text-[18px] tracking-[0.32em] font-semibold opacity-90 mb-3">JIGNASAYAAN</span>
+          <span class="block text-[44px] md:text-[74px] lg:text-[84px]">The Modern</span>
+          <span class="block text-[44px] md:text-[74px] lg:text-[84px] font-light italic font-display -mt-1">Desayatana.</span>
+        </h1>
+
+        <div class="mt-6 max-w-[620px]">
+          <p class="text-[18px] md:text-[22px] leading-relaxed text-white font-light">This Time for <span class="font-semibold text-golden">Keralam.</span> An expedition where South discovers Bharat — through <span class="underline decoration-emerald decoration-2 underline-offset-4">culture, leadership & transformation.</span></p>
+          <p class="mt-3 text-white/70 text-sm md:text-[15px] leading-relaxed max-w-[560px]">Not tourism. Not an event. A national experiential learning movement connecting 5000+ students to the soul of Bharat — starting from the heart of Kerala.</p>
+        </div>
+
+        <div class="mt-8 flex flex-wrap gap-3">
+          <button onclick="openRegister()" class="bg-saffron hover:bg-[#e67a12] text-white px-8 py-4 rounded-full font-bold text-sm tracking-wide shadow-xl shadow-saffron/25 flex items-center gap-2 transition magnetic"><i class="ri-compass-3-line text-lg"></i> Join the Expedition</button>
+          <button onclick="openVideo()" class="glass-dark text-white px-7 py-4 rounded-full font-semibold text-sm flex items-center gap-3 hover:bg-white hover:text-midnight transition"><span class="w-9 h-9 rounded-full bg-white text-midnight flex items-center justify-center"><i class="ri-play-fill text-xl ml-0.5"></i></span> Watch the Journey — 1:42</button>
+          <a  href="#keralam" class="hidden md:inline-flex items-center gap-2 text-white/90 text-sm font-semibold px-6 py-4 rounded-full border border-white/20 hover:bg-white hover:text-midnight transition"><i class="ri-map-pin-line"></i> Explore Keralam</a>
+        </div>
+
+        <!-- trust bar -->
+        <div class="mt-10 grid grid-cols-3 gap-4 max-w-[560px]">
+          <div class="glass-dark rounded-2xl p-4">
+            <div class="text-golden font-space font-bold text-2xl leading-none">5,000+</div>
+            <div class="text-white/70 text-[11px] tracking-widest font-semibold mt-1">STUDENTS ON BOARD</div>
+          </div>
+          <div class="glass-dark rounded-2xl p-4">
+            <div class="text-white font-space font-bold text-2xl leading-none">14</div>
+            <div class="text-white/70 text-[11px] tracking-widest font-semibold mt-1">DISTRICTS OF KERALA</div>
+          </div>
+          <div class="glass-dark rounded-2xl p-4">
+            <div class="text-emerald font-space font-bold text-2xl leading-none">100+</div>
+            <div class="text-white/70 text-[11px] tracking-widest font-semibold mt-1">INSTITUTIONS</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Card Stack -->
+      <div class="relative z-10 lg:pb-2">
+        <div class="bg-white rounded-[28px] p-3 shadow-[0_30px_80px_rgba(0,0,0,0.35)] max-w-[480px] ml-auto">
+          <div class="rounded-[20px] overflow-hidden relative">
+            <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=1200&auto=format&fit=crop" alt="Train journey" class="w-full h-[420px] object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+            <div class="absolute top-4 left-4 flex items-center gap-2">
+              <span class="bg-emerald text-white text-[11px] font-extrabold tracking-widest px-3 py-1.5 rounded-full flex items-center gap-1.5"><span class="w-1.5 h-1.5 bg-white rounded-full animate-pulse"></span> LIVE EXPEDITION</span>
+              <span class="bg-white/90 backdrop-blur text-midnight text-[11px] font-bold px-3 py-1.5 rounded-full">VIJAYAWADA → KOCHI</span>
+            </div>
+            <div class="absolute bottom-4 left-4 right-4">
+              <div class="glass rounded-2xl p-4 flex items-center justify-between">
+                <div>
+                  <div class="text-[11px] tracking-widest font-bold text-midnight/60">NEXT DEPARTURE</div>
+                  <div id="countdown" class="font-space font-bold text-midnight text-lg leading-none mt-1">42D : 08H : 21M : 09S</div>
+                </div>
+                <button onclick="openRegister()" class="bg-midnight text-white w-10 h-10 rounded-full flex items-center justify-center hover:bg-black transition"><i class="ri-arrow-right-line text-xl"></i></button>
+              </div>
+            </div>
+            <!-- play -->
+            <button onclick="openVideo()" class="absolute inset-0 m-auto w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-xl hover:scale-105 transition"><i class="ri-play-fill text-3xl text-midnight ml-1"></i></button>
+          </div>
+          <div class="px-2 pt-4 pb-2 flex items-center justify-between">
+            <div class="flex -space-x-2">
+              <img src="https://i.pravatar.cc/100?img=33" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/100?img=12" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <img src="https://i.pravatar.cc/100?img=45" class="w-8 h-8 rounded-full border-2 border-white object-cover">
+              <div class="w-8 h-8 rounded-full bg-midnight text-white border-2 border-white flex items-center justify-center text-[11px] font-bold">+2k</div>
+            </div>
+            <div class="text-xs font-semibold text-midnight/70 flex items-center gap-1.5"><i class="ri-star-fill text-golden"></i> 4.9/5 from 3,284 students</div>
+          </div>
+        </div>
+        <!-- floating badge -->
+        <div class="hidden lg:flex absolute -left-6 bottom-10 bg-golden text-midnight rounded-2xl px-5 py-4 shadow-xl items-center gap-3 rotate-[-1.5deg]">
+          <div class="w-10 h-10 bg-midnight text-golden rounded-xl flex items-center justify-center"><i class="ri-award-line text-xl"></i></div>
+          <div class="leading-tight">
+            <div class="font-extrabold text-sm tracking-wide">National Integration</div>
+            <div class="text-xs font-medium opacity-70">Ministry Recognised Movement</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- bottom marquee -->
+  <div class="relative border-y border-white/10 bg-midnight/70 backdrop-blur overflow-hidden">
+    <div class="flex items-center gap-6 py-3 marquee text-white/90 text-xs tracking-[0.28em] font-bold">
+      <span>EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span><span> EXPLORE • EXPERIENCE • EVOLVE •</span>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT Editorial -->
+<section id="about" class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+  <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-8 md:gap-12 items-center">
+    <div class="reveal">
+      <div class="inline-flex items-center gap-2 text-emerald font-bold tracking-[0.2em] text-xs"><span class="w-8 h-px bg-emerald"></span> THE MOVEMENT</div>
+      <h2 class="mt-4 font-sora font-extrabold text-[32px] md:text-[48px] leading-[0.95] text-midnight">This is not a tour.<br><span class="font-light italic font-display text-emerald">It’s a Desayatana.</span></h2>
+      <p class="mt-5 text-[17px] leading-relaxed text-charcoal/70">Jignasayaan reimagines the ancient Indian tradition of <em>Desatana</em> — learning by travelling — for a modern Bharat. Every kilometre is a classroom. Every meeting, a mirror.</p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div class="bg-white rounded-2xl p-5 border border-black/5 shadow-sm">
+          <div class="w-9 h-9 rounded-xl bg-emerald/10 text-emerald flex items-center justify-center"><i class="ri-book-open-line text-xl"></i></div>
+          <div class="font-bold mt-3">Experiential Learning</div>
+          <div class="text-sm text-black/60 leading-relaxed mt-1">Workshops inside forts, labs inside forests, leadership on moving trains.</div>
+        </div>
+        <div class="bg-midnight text-white rounded-2xl p-5 shadow-lg">
+          <div class="w-9 h-9 rounded-xl bg-white/10 flex items-center justify-center"><i class="ri-team-line text-xl"></i></div>
+          <div class="font-bold mt-3">South for Bharat</div>
+          <div class="text-sm text-white/70 leading-relaxed mt-1">South leads the dialogue. Kerala shows the way. Bharat comes together.</div>
+        </div>
+      </div>
+      <div class="mt-6 flex flex-wrap gap-3 text-sm font-semibold">
+        <span class="px-4 py-2 rounded-full bg-[#FFF3E6] text-[#9A4A00] border border-[#FFD9A8]">● Culture</span>
+        <span class="px-4 py-2 rounded-full bg-[#E6F6F1] text-emerald border border-[#BFE9DE]">● Leadership</span>
+        <span class="px-4 py-2 rounded-full bg-[#EEF2FF] text-midnight border border-[#C7D2FE]">● Service</span>
+      </div>
+    </div>
+    <div class="relative reveal">
+      <div class="rounded-[28px] overflow-hidden bg-white p-2 shadow-[0_20px_60px_rgba(8,27,51,0.12)]">
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=1200&auto=format&fit=crop" alt="Kerala students" class="w-full h-[520px] object-cover rounded-[20px]">
+      </div>
+      <!-- stat overlay -->
+      <div class="absolute -bottom-6 -left-2 md:left-6 bg-white rounded-2xl shadow-xl p-5 flex items-center gap-4 max-w-[360px]">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=200&auto=format&fit=crop" class="w-14 h-14 rounded-xl object-cover">
+        <div>
+          <div class="font-bold leading-none">Kerala Model • Bharat Vision</div>
+          <div class="text-xs text-black/60 mt-1">Learn the world’s most celebrated development story — on ground.</div>
+          <div class="mt-2 flex gap-1.5"><span class="w-6 h-1.5 rounded-full bg-emerald"></span><span class="w-6 h-1.5 rounded-full bg-saffron"></span><span class="w-6 h-1.5 rounded-full bg-golden"></span></div>
+        </div>
+      </div>
+      <div class="hidden md:block absolute -top-4 -right-4 bg-saffron text-white rounded-2xl px-5 py-3 shadow-lg rotate-1">
+        <div class="text-xs tracking-widest font-bold opacity-90">FOUNDED 2019</div>
+        <div class="font-space font-bold text-xl leading-none">4 Editions • 12k Alumni</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY Grid -->
+<section id="why" class="bg-white border-y border-black/5">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="reveal">
+        <div class="text-emerald font-bold tracking-[0.2em] text-xs">WHY JIGNASAYAAN</div>
+        <h3 class="font-sora font-extrabold text-[28px] md:text-[42px] leading-none mt-3 text-midnight">Why thousands <span class="font-light italic font-display">choose the Yaan.</span></h3>
+      </div>
+      <p class="max-w-[520px] text-black/60 text-[15px] leading-relaxed reveal">More than a journey. A rite of passage. Designed with educators, cultural practitioners, and nation-builders.</p>
+    </div>
+
+    <div class="mt-10 grid md:grid-cols-3 gap-6">
+      <div class="group bg-[#F5F7FA] rounded-[28px] p-7 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all border border-transparent hover:border-black/5 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-midnight text-white flex items-center justify-center text-xl"><i class="ri-lightbulb-flash-line"></i></div>
+        <h4 class="font-bold text-lg mt-5">Learning Beyond Classrooms</h4>
+        <p class="text-sm leading-relaxed text-black/60 mt-2">From ISRO to spice farms, from temples to startups — you learn where history was made.</p>
+        <ul class="mt-4 space-y-2 text-sm">
+          <li class="flex gap-2"><i class="ri-check-line text-emerald mt-0.5"></i> 40+ curated learning sites</li>
+          <li class="flex gap-2"><i class="ri-check-line text-emerald mt-0.5"></i> Mentors from across Bharat</li>
+          <li class="flex gap-2"><i class="ri-check-line text-emerald mt-0.5"></i> Certificate + Credits</li>
+        </ul>
+      </div>
+      <div class="group bg-emerald text-white rounded-[28px] p-7 hover:shadow-xl hover:-translate-y-1 transition-all reveal">
+        <div class="w-12 h-12 rounded-2xl bg-white/15 flex items-center justify-center text-xl"><i class="ri-compass-discover-line"></i></div>
+        <h4 class="font-bold text-lg mt-5">Kerala Like Never Before</h4>
+        <p class="text-sm leading-relaxed text-white/80 mt-2">Backwaters to high-ranges, art forms to Ayurveda — an immersive cultural immersion.</p>
+        <div class="mt-5 grid grid-cols-3 gap-2 text-center">
+          <div class="bg-white/10 rounded-xl py-3"><div class="font-space font-bold">14</div><div class="text-[10px] tracking-widest">DISTRICTS</div></div>
+          <div class="bg-white/10 rounded-xl py-3"><div class="font-space font-bold">7</div><div class="text-[10px] tracking-widest">NIGHTS</div></div>
+          <div class="bg-white/10 rounded-xl py-3"><div class="font-space font-bold">∞</div><div class="text-[10px] tracking-widest">STORIES</div></div>
+        </div>
+      </div>
+      <div class="group bg-[#FFF8EC] rounded-[28px] p-7 hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all border border-[#FFE3B3]/60 reveal">
+        <div class="w-12 h-12 rounded-2xl bg-saffron text-white flex items-center justify-center text-xl"><i class="ri-shield-star-line"></i></div>
+        <h4 class="font-bold text-lg mt-5">Safe. Structured. Transformative.</h4>
+        <p class="text-sm leading-relaxed text-black/60 mt-2">24/7 control room, medical team, GPS tracking, 1:15 mentor ratio.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold">
+          <span class="px-3 py-1.5 rounded-full bg-white border border-black/5">GPS Tracking</span>
+          <span class="px-3 py-1.5 rounded-full bg-white border border-black/5">Doctor On Board</span>
+          <span class="px-3 py-1.5 rounded-full bg-white border border-black/5">Verified Stays</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- KERALA / BHARAT SPLIT -->
+<section id="keralam" class="max-w-[1440px] mx-auto px-4 md:px-8 py-12 md:py-20">
+  <div class="grid lg:grid-cols-2 gap-6">
+    <!-- Kerala -->
+    <div class="relative overflow-hidden rounded-[32px] bg-emerald p-7 md:p-10 text-white reveal">
+      <div class="absolute -right-10 -top-10 w-72 h-72 bg-white/10 rounded-full blur-3xl"></div>
+      <div class="absolute -right-16 -bottom-16 w-96 h-96 bg-golden/20 rounded-full blur-3xl"></div>
+      <div class="relative">
+        <div class="inline-flex items-center gap-2 bg-white text-emerald px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest"><i class="ri-leaf-line"></i> THIS TIME FOR KERALAM</div>
+        <h3 class="font-sora font-extrabold text-[30px] md:text-[42px] leading-[0.95] mt-4">Why Keralam. <br><span class="font-light italic font-display text-golden">Why Now.</span></h3>
+        <p class="mt-4 text-white/85 leading-relaxed">God’s Own Country is also India’s most powerful development classroom. Literacy, health, harmony, ecology — come see how it was built.</p>
+        <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-3 text-sm">
+          <div class="bg-white/10 rounded-2xl p-4 backdrop-blur flex gap-3"><i class="ri-water-flash-line text-golden text-xl"></i><div><div class="font-bold">Backwaters & Beyond</div><div class="text-white/75 text-xs mt-1">Alleppey, Kumarakom, Kochi</div></div></div>
+          <div class="bg-white/10 rounded-2xl p-4 backdrop-blur flex gap-3"><i class="ri-landscape-line text-golden text-xl"></i><div><div class="font-bold">High Ranges</div><div class="text-white/75 text-xs mt-1">Munnar, Wayanad, Idukki</div></div></div>
+          <div class="bg-white/10 rounded-2xl p-4 backdrop-blur flex gap-3"><i class="ri-palette-line text-golden text-xl"></i><div><div class="font-bold">Living Culture</div><div class="text-white/75 text-xs mt-1">Kathakali, Kalaripayattu, Theyyam</div></div></div>
+          <div class="bg-white/10 rounded-2xl p-4 backdrop-blur flex gap-3"><i class="ri-seedling-line text-golden text-xl"></i><div><div class="font-bold">Ecology & Ayurveda</div><div class="text-white/75 text-xs mt-1">Spices, forests, healing</div></div></div>
+        </div>
+        <div class="mt-7 rounded-2xl overflow-hidden bg-white p-2">
+          <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1000&auto=format&fit=crop" alt="Kerala" class="w-full h-48 object-cover rounded-xl">
+        </div>
+      </div>
+    </div>
+    <!-- Bharat -->
+    <div id="bharat" class="relative overflow-hidden rounded-[32px] bg-midnight p-7 md:p-10 text-white reveal">
+      <div class="absolute inset-0 opacity-20" style="background: radial-gradient(600px 400px at 80% 20%, #F28C28 0%, transparent 60%), radial-gradient(600px 400px at 20% 90%, #0F8B6F 0%, transparent 60%)"></div>
+      <div class="relative">
+        <div class="inline-flex items-center gap-2 bg-saffron text-white px-3 py-1.5 rounded-full text-xs font-extrabold tracking-widest">SOUTH FOR BHARAT • VISION 2047</div>
+        <h3 class="font-sora font-extrabold text-[30px] md:text-[42px] leading-[0.95] mt-4">South for Bharat. <br><span class="font-light italic font-display text-saffron">A Nation Moves.</span></h3>
+        <p class="mt-4 text-white/75 leading-relaxed">When South India travels, Bharat listens. This Yaan builds cultural bridges — from Keralam to Kashi, from Munnar to Manipur.</p>
+        <div class="mt-6 bg-white text-midnight rounded-2xl p-5 flex gap-4 items-center">
+          <div class="w-12 h-12 rounded-xl bg-midnight text-white flex items-center justify-center text-xl"><i class="ri-flag-line"></i></div>
+          <div>
+            <div class="font-bold">Ek Bharat. Shreshtha Bharat.</div>
+            <div class="text-sm text-black/60">Student ambassadors carrying stories of the South to every corner of the nation.</div>
+          </div>
+        </div>
+        <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+          <div class="rounded-2xl bg-white/10 backdrop-blur p-4 border border-white/10"><div class="font-space font-bold text-xl">12K+</div><div class="text-[11px] tracking-widest font-semibold opacity-70">ALUMNI</div></div>
+          <div class="rounded-2xl bg-white/10 backdrop-blur p-4 border border-white/10"><div class="font-space font-bold text-xl">28</div><div class="text-[11px] tracking-widest font-semibold opacity-70">STATES CONNECTED</div></div>
+          <div class="rounded-2xl bg-saffron p-4 text-white"><div class="font-space font-bold text-xl">1</div><div class="text-[11px] tracking-widest font-bold">BHARAT</div></div>
+        </div>
+        <button onclick="document.getElementById('journey').scrollIntoView({behavior:'smooth'})" class="mt-6 w-full bg-white text-midnight py-4 rounded-full font-bold flex items-center justify-center gap-2 hover:bg-ivory transition">See the Journey Map <i class="ri-arrow-right-line"></i></button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERACTIVE JOURNEY -->
+<section id="journey" class="bg-[#F5F7FA] border-y border-black/5 relative overflow-hidden">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+    <div class="text-center max-w-3xl mx-auto reveal">
+      <div class="inline-flex items-center gap-2 bg-white border border-black/5 px-4 py-2 rounded-full text-xs font-bold tracking-[0.18em] text-midnight"><i class="ri-train-line text-emerald"></i> INTERACTIVE YAAN MAP</div>
+      <h3 class="font-sora font-extrabold text-[28px] md:text-[48px] leading-none mt-4 text-midnight">Your scroll is the journey.</h3>
+      <p class="mt-3 text-black/60 leading-relaxed">Follow the train from Vijayawada into the heart of Keralam. Each stop unlocks a new layer of learning.</p>
+      <div class="mt-6 flex justify-center">
+        <div class="flex items-center gap-2 text-xs font-bold tracking-widest text-midnight/60"><span class="w-2 h-2 rounded-full bg-emerald animate-pulse"></span> SCROLL TO MOVE THE TRAIN <i class="ri-arrow-down-line"></i></div>
+      </div>
+    </div>
+
+    <div class="mt-10 relative">
+      <!-- progress -->
+      <div class="hidden md:block absolute left-1/2 top-0 bottom-0 -translate-x-1/2 w-px bg-black/10">
+        <div id="progressLine" class="absolute top-0 left-0 w-full bg-gradient-to-b from-emerald to-saffron transition-all duration-200" style="height:12%"></div>
+      </div>
+      <!-- train -->
+      <div id="train" class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-14 h-14 bg-midnight rounded-2xl items-center justify-center text-white shadow-xl border-4 border-white z-10 transition-all duration-200" style="top:12%"><i class="ri-train-fill text-2xl"></i></div>
+
+      <div class="grid gap-8 relative">
+        <!-- Station 1 -->
+        <div class="journey-card grid md:grid-cols-[1fr_80px_1fr] gap-4 items-center reveal">
+          <div class="md:text-right order-2 md:order-1">
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-black/5 md:ml-auto max-w-[520px]">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-emerald"><span class="w-6 h-px bg-emerald"></span> STATION 01 — START</div>
+              <h4 class="font-bold text-xl mt-2">Vijayawada — The Departure</h4>
+              <p class="text-sm text-black/60 mt-2 leading-relaxed">Flag-off at dawn. 5000 hearts, one chant — Bharat Mata Ki Jai. Leadership briefing, team formation, and the first journal entry.</p>
+              <div class="mt-3 flex gap-2 text-xs font-semibold"><span class="px-3 py-1 rounded-full bg-[#E6F6F1] text-emerald">Orientation</span><span class="px-3 py-1 rounded-full bg-[#FFF3E6] text-[#9A4A00]">Team Yaans</span></div>
+            </div>
+          </div>
+          <div class="flex md:justify-center order-1 md:order-2"><div class="w-10 h-10 rounded-full bg-emerald text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow">01</div></div>
+          <div class="order-3 hidden md:block"><img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover rounded-[20px] shadow-sm"></div>
+        </div>
+        <!-- Station 2 -->
+        <div class="journey-card grid md:grid-cols-[1fr_80px_1fr] gap-4 items-center reveal">
+          <div class="hidden md:block"><img src="https://images.unsplash.com/photo-1581793745862-99fde7fa73d2?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover rounded-[20px] shadow-sm"></div>
+          <div class="flex md:justify-center"><div class="w-10 h-10 rounded-full bg-midnight text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow">02</div></div>
+          <div>
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-black/5 max-w-[520px]">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-saffron"><span class="w-6 h-px bg-saffron"></span> STATION 02 — KNOWLEDGE</div>
+              <h4 class="font-bold text-xl mt-2">Kochi — Knowledge Harbour</h4>
+              <p class="text-sm text-black/60 mt-2 leading-relaxed">Maritime history, startups at Infopark, and the story of spice that connected South to the world.</p>
+              <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+                <div class="bg-[#F5F7FA] rounded-xl p-3"><i class="ri-ship-line text-emerald text-lg"></i><div class="font-semibold mt-1">Port Visit</div></div>
+                <div class="bg-[#F5F7FA] rounded-xl p-3"><i class="ri-cpu-line text-midnight text-lg"></i><div class="font-semibold mt-1">Innovation</div></div>
+                <div class="bg-[#F5F7FA] rounded-xl p-3"><i class="ri-history-line text-saffron text-lg"></i><div class="font-semibold mt-1">Heritage</div></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- Station 3 -->
+        <div class="journey-card grid md:grid-cols-[1fr_80px_1fr] gap-4 items-center reveal">
+          <div class="md:text-right order-2 md:order-1">
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-black/5 md:ml-auto max-w-[520px]">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-emerald"><span class="w-6 h-px bg-emerald"></span> STATION 03 — CULTURE</div>
+              <h4 class="font-bold text-xl mt-2">Alleppey & Kumarakom — Culture on Water</h4>
+              <p class="text-sm text-black/60 mt-2 leading-relaxed">Houseboats become classrooms. Kathakali workshops, coir craft, and a night of stories under the stars.</p>
+              <div class="mt-3 flex flex-wrap gap-2 text-xs font-semibold"><span class="px-3 py-1 rounded-full bg-emerald text-white">Backwaters</span><span class="px-3 py-1 rounded-full bg-white border border-black/10">Art Forms</span><span class="px-3 py-1 rounded-full bg-white border border-black/10">Village Life</span></div>
+            </div>
+          </div>
+          <div class="flex md:justify-center order-1 md:order-2"><div class="w-10 h-10 rounded-full bg-golden text-midnight flex items-center justify-center font-bold text-sm border-4 border-white shadow">03</div></div>
+          <div class="order-3 hidden md:block"><img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover rounded-[20px] shadow-sm"></div>
+        </div>
+        <!-- Station 4 -->
+        <div class="journey-card grid md:grid-cols-[1fr_80px_1fr] gap-4 items-center reveal">
+          <div class="hidden md:block"><img src="https://images.unsplash.com/photo-1516331138075-f3adc1e149cd?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover rounded-[20px] shadow-sm"></div>
+          <div class="flex md:justify-center"><div class="w-10 h-10 rounded-full bg-saffron text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow">04</div></div>
+          <div>
+            <div class="bg-midnight text-white rounded-[24px] p-6 shadow-lg max-w-[520px]">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-golden"><span class="w-6 h-px bg-golden"></span> STATION 04 — LEADERSHIP</div>
+              <h4 class="font-bold text-xl mt-2">Munnar & Wayanad — Leadership in the Wild</h4>
+              <p class="text-sm text-white/70 mt-2 leading-relaxed">Trekking Western Ghats, sustainable farms, tea trails — where resilience is taught by nature itself.</p>
+              <button onclick="openRegister()" class="mt-4 bg-white text-midnight px-5 py-2.5 rounded-full text-sm font-bold hover:bg-ivory transition">Claim Your Seat →</button>
+            </div>
+          </div>
+        </div>
+        <!-- Station 5 -->
+        <div class="journey-card grid md:grid-cols-[1fr_80px_1fr] gap-4 items-center reveal">
+          <div class="md:text-right order-2 md:order-1">
+            <div class="bg-white rounded-[24px] p-6 shadow-sm border border-black/5 md:ml-auto max-w-[520px]">
+              <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-midnight"><span class="w-6 h-px bg-midnight"></span> STATION 05 — BHARAT INTEGRATION</div>
+              <h4 class="font-bold text-xl mt-2">Trivandrum — South for Bharat Finale</h4>
+              <p class="text-sm text-black/60 mt-2 leading-relaxed">Padmanabhaswamy, ISRO, sunset at Kovalam — and a grand cultural exchange where South presents Bharat to Bharat.</p>
+              <div class="mt-3 text-xs font-semibold text-emerald flex items-center gap-1 justify-start md:justify-end"><i class="ri-check-double-line"></i> Transformation • Certificate • Lifelong Sangha</div>
+            </div>
+          </div>
+          <div class="flex md:justify-center order-1 md:order-2"><div class="w-10 h-10 rounded-full bg-midnight text-white flex items-center justify-center font-bold text-sm border-4 border-white shadow"><i class="ri-flag-fill"></i></div></div>
+          <div class="order-3 hidden md:block"><img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=800&auto=format&fit=crop" class="w-full h-56 object-cover rounded-[20px] shadow-sm"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DESTINATIONS -->
+<section id="destinations" class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+  <div class="flex flex-wrap items-end justify-between gap-6">
+    <div class="reveal">
+      <div class="text-emerald font-bold tracking-[0.2em] text-xs">DESTINATIONS</div>
+      <h3 class="font-sora font-extrabold text-[28px] md:text-[42px] leading-none mt-3 text-midnight">Learn where <span class="font-light italic font-display">legends lived.</span></h3>
+    </div>
+    <div class="flex items-center gap-2 bg-[#F5F7FA] p-1.5 rounded-full reveal">
+      <button data-filter="all" class="filter-btn active px-5 py-2 rounded-full text-sm font-bold bg-midnight text-white">All</button>
+      <button data-filter="nature" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold text-black/60 hover:text-midnight">Nature</button>
+      <button data-filter="culture" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold text-black/60 hover:text-midnight">Culture</button>
+      <button data-filter="innovation" class="filter-btn px-5 py-2 rounded-full text-sm font-semibold text-black/60 hover:text-midnight">Innovation</button>
+    </div>
+  </div>
+
+  <div id="destinationGrid" class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <!-- Card 1 -->
+    <article data-cat="nature" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1593693397690-362cb9666fc2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1.5"><i class="ri-landscape-line text-emerald"></i> MUNNAR • 1600M</div>
+        <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+          <span class="bg-emerald text-white text-xs font-bold px-3 py-1 rounded-full">NATURE</span>
+          <span class="bg-midnight text-white text-xs font-semibold px-3 py-1 rounded-full flex items-center gap-1"><i class="ri-map-pin-line"></i> Idukki</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">Tea Trails & Western Ghats Trek</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Walk through endless tea gardens, learn sustainable farming, and trek the cloud forests.</p>
+        <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+          <div class="bg-[#F5F7FA] rounded-xl p-2.5"><div class="font-bold">Ecology</div><div class="text-black/50">Learning</div></div>
+          <div class="bg-[#F5F7FA] rounded-xl p-2.5"><div class="font-bold">Trek</div><div class="text-black/50">Leadership</div></div>
+          <div class="bg-[#F5F7FA] rounded-xl p-2.5"><div class="font-bold">3.5/5</div><div class="text-black/50">Difficulty</div></div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-xs font-semibold text-emerald flex items-center gap-1"><i class="ri-links-line"></i> Linked to Bharat: Darjeeling</div>
+          <button onclick="openRegister()" class="w-9 h-9 rounded-full bg-midnight text-white flex items-center justify-center hover:bg-black transition"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </article>
+    <!-- Card 2 -->
+    <article data-cat="culture" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">ALLEPPEY • BACKWATERS</div>
+        <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+          <span class="bg-saffron text-white text-xs font-bold px-3 py-1 rounded-full">CULTURE</span>
+          <span class="bg-midnight text-white text-xs font-semibold px-3 py-1 rounded-full">Alappuzha</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">Living on Water — Houseboat Classroom</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Coir making, village life, and a night where folk songs become your textbook.</p>
+        <div class="mt-4 flex flex-wrap gap-2 text-xs font-semibold"><span class="px-3 py-1 rounded-full bg-[#FFF3E6] border border-[#FFD9A8]">Kathakali</span><span class="px-3 py-1 rounded-full bg-[#E6F6F1] border border-[#BFE9DE]">Coir Craft</span><span class="px-3 py-1 rounded-full bg-[#EEF2FF] border border-[#C7D2FE]">Cuisine</span></div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-xs font-semibold text-emerald">1 Night • All Meals • Folk Night</div>
+          <button onclick="openRegister()" class="w-9 h-9 rounded-full bg-midnight text-white flex items-center justify-center"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </article>
+    <!-- Card 3 -->
+    <article data-cat="innovation" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">KOCHI • HARBOUR CITY</div>
+        <div class="absolute bottom-3 left-3 right-3 flex justify-between items-center">
+          <span class="bg-midnight text-white text-xs font-bold px-3 py-1 rounded-full">INNOVATION</span>
+          <span class="bg-white text-midnight text-xs font-semibold px-3 py-1 rounded-full">Ernakulam</span>
+        </div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">Where Spice Met The World</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Fort Kochi, Infopark startups, and the maritime story that shaped global trade.</p>
+        <div class="mt-4 grid grid-cols-2 gap-2 text-xs">
+          <div class="bg-[#F5F7FA] rounded-xl p-3 flex items-center gap-2"><i class="ri-cpu-line text-midnight text-lg"></i><div><div class="font-bold">Infopark</div><div class="text-black/50">Startup Meet</div></div></div>
+          <div class="bg-[#F5F7FA] rounded-xl p-3 flex items-center gap-2"><i class="ri-anchor-line text-emerald text-lg"></i><div><div class="font-bold">Maritime</div><div class="text-black/50">Port Walk</div></div></div>
+        </div>
+        <div class="mt-4 flex items-center justify-between">
+          <div class="text-xs font-semibold text-emerald">Map • Highlights • Learning Outcomes →</div>
+          <button onclick="openRegister()" class="w-9 h-9 rounded-full bg-midnight text-white flex items-center justify-center"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </article>
+    <!-- Card 4 -->
+    <article data-cat="culture" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">WAYANAD • TRIBAL HERITAGE</div>
+        <div class="absolute bottom-3 left-3"><span class="bg-emerald text-white text-xs font-bold px-3 py-1 rounded-full">NATURE • CULTURE</span></div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">Forests, Tribes & Sustainability</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Edakkal caves, tribal hamlets, and lessons in living with the forest, not off it.</p>
+        <div class="mt-4 flex items-center justify-between">
+          <span class="text-xs font-bold tracking-widest text-midnight/60">QUICK FACTS • 3 CAVES • 2 TRIBES</span>
+          <button onclick="openRegister()" class="w-9 h-9 rounded-full bg-midnight text-white flex items-center justify-center"><i class="ri-arrow-right-line"></i></button>
+        </div>
+      </div>
+    </article>
+    <!-- Card 5 -->
+    <article data-cat="innovation" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1512343879784-a960bf40e7f2?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">TRIVANDRUM • CAPITAL</div>
+        <div class="absolute bottom-3 left-3"><span class="bg-midnight text-white text-xs font-bold px-3 py-1 rounded-full">LEADERSHIP • SPACE</span></div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">From Padmanabha to PSLV</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Temple architecture to ISRO’s launch legacy — where devotion meets discovery.</p>
+        <div class="mt-4 flex gap-2 text-xs font-semibold"><span class="px-3 py-1.5 rounded-full bg-midnight text-white">ISRO Visit*</span><span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Temple</span><span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Beach</span></div>
+      </div>
+    </article>
+    <!-- Card 6 -->
+    <article data-cat="nature" class="group bg-white rounded-[24px] overflow-hidden border border-black/5 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all">
+      <div class="relative h-56 overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?q=80&w=1000&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute top-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">THEKKADY • PERIYAR</div>
+        <div class="absolute bottom-3 left-3"><span class="bg-golden text-midnight text-xs font-bold px-3 py-1 rounded-full">WILDLIFE • YOGA</span></div>
+      </div>
+      <div class="p-6">
+        <h4 class="font-bold text-lg leading-tight">Periyar at Sunrise — Stillness as Strength</h4>
+        <p class="text-sm text-black/60 mt-2 leading-relaxed">Bamboo rafting, meditation, and understanding human–wildlife harmony.</p>
+        <div class="mt-4 text-xs font-semibold text-black/60">Learning Outcome: Ecology, Mindfulness, Teamwork</div>
+        <button onclick="openRegister()" class="mt-3 w-full bg-[#F5F7FA] py-2.5 rounded-full font-bold text-sm hover:bg-midnight hover:text-white transition">Know More</button>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- STUDENT EXPERIENCE Bento -->
+<section id="experience" class="bg-midnight text-white relative overflow-hidden">
+  <div class="absolute inset-0 opacity-[0.06]" style="background-image:url('https://grainy-gradients.vercel.app/noise.svg')"></div>
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20 relative">
+    <div class="flex flex-wrap items-end justify-between gap-6 reveal">
+      <div>
+        <div class="text-golden font-bold tracking-[0.2em] text-xs">STUDENT LIFE</div>
+        <h3 class="font-sora font-extrabold text-[28px] md:text-[44px] leading-none mt-3">Life on the Yaan. <br><span class="font-light italic font-display text-white/80">Friends for a lifetime.</span></h3>
+      </div>
+      <p class="max-w-[520px] text-white/60 text-[15px] leading-relaxed">From 4 AM chai to midnight reflections — every hour is designed for growth, joy, and belonging.</p>
+    </div>
+
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-12 gap-4 auto-rows-[220px]">
+      <div class="md:col-span-7 relative rounded-[24px] overflow-hidden group reveal">
+        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent"></div>
+        <div class="absolute bottom-0 p-6">
+          <div class="inline-flex items-center gap-2 bg-saffron text-white text-xs font-bold px-3 py-1 rounded-full">TRAIN LIFE</div>
+          <h4 class="font-bold text-xl mt-3">A Moving Campus. 16 Coaches. 1 Family.</h4>
+          <p class="text-sm text-white/80 mt-1 max-w-[520px]">Games, jamming, adda, and peer learning. Birthdays at 80 kmph.</p>
+        </div>
+      </div>
+      <div class="md:col-span-5 bg-white text-midnight rounded-[24px] p-7 flex flex-col justify-between reveal">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-emerald text-white flex items-center justify-center"><i class="ri-sun-line text-xl"></i></div>
+          <h4 class="font-bold text-lg mt-4">A Day in the Yaan</h4>
+          <div class="mt-3 space-y-2.5 text-sm">
+            <div class="flex justify-between border-b border-black/5 pb-2"><span class="text-black/60">05:30</span><span class="font-semibold">Yoga & Sunrise Reflection</span></div>
+            <div class="flex justify-between border-b border-black/5 pb-2"><span class="text-black/60">08:00</span><span class="font-semibold">Learning Site Visit</span></div>
+            <div class="flex justify-between border-b border-black/5 pb-2"><span class="text-black/60">13:00</span><span class="font-semibold">Local Thali & Stories</span></div>
+            <div class="flex justify-between border-b border-black/5 pb-2"><span class="text-black/60">18:00</span><span class="font-semibold">Cultural Exchange</span></div>
+            <div class="flex justify-between"><span class="text-black/60">21:30</span><span class="font-semibold">Bonfire & Journal</span></div>
+          </div>
+        </div>
+        <div class="mt-4 flex items-center gap-2 text-xs font-bold text-emerald"><i class="ri-check-line"></i> Structured • Safe • Joyful</div>
+      </div>
+      <div class="md:col-span-5 bg-emerald rounded-[24px] p-7 text-white flex flex-col justify-between reveal">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-white/15 flex items-center justify-center"><i class="ri-team-line text-xl"></i></div>
+          <h4 class="font-bold text-lg mt-4">Friendships Across Bharat</h4>
+          <p class="text-sm text-white/80 mt-2 leading-relaxed">Telugu, Malayalam, Hindi, Tamil — you’ll speak in smiles first, languages later.</p>
+        </div>
+        <div class="flex -space-x-3 mt-6">
+          <img src="https://i.pravatar.cc/100?img=15" class="w-10 h-10 rounded-full border-2 border-emerald object-cover">
+          <img src="https://i.pravatar.cc/100?img=32" class="w-10 h-10 rounded-full border-2 border-emerald object-cover">
+          <img src="https://i.pravatar.cc/100?img=28" class="w-10 h-10 rounded-full border-2 border-emerald object-cover">
+          <div class="w-10 h-10 rounded-full bg-midnight border-2 border-emerald flex items-center justify-center text-xs font-bold">+5k</div>
+        </div>
+      </div>
+      <div class="md:col-span-4 relative rounded-[24px] overflow-hidden group reveal">
+        <img src="https://images.unsplash.com/photo-1511635001-e5a24843664f?q=80&w=800&auto=format&fit=crop" class="w-full h-full object-cover group-hover:scale-105 transition duration-700">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
+        <div class="absolute bottom-0 p-5">
+          <div class="bg-white text-midnight text-xs font-bold px-3 py-1 rounded-full inline-flex">WORKSHOPS</div>
+          <div class="font-bold mt-2">Leadership Labs, Theatre, Design Thinking</div>
+        </div>
+      </div>
+      <div class="md:col-span-3 bg-golden rounded-[24px] p-7 text-midnight flex flex-col justify-between reveal">
+        <div>
+          <div class="w-10 h-10 rounded-xl bg-midnight text-golden flex items-center justify-center"><i class="ri-award-line text-xl"></i></div>
+          <h4 class="font-bold text-lg mt-4">Certificates that Matter</h4>
+          <p class="text-sm text-midnight/70 mt-2">National integration certificate, leadership credits, and alumni network.</p>
+        </div>
+        <div class="text-3xl font-space font-bold mt-4">12k+ Alumni</div>
+      </div>
+    </div>
+
+    <!-- Safety -->
+    <div class="mt-12 bg-white rounded-[28px] p-6 md:p-8 text-midnight reveal">
+      <div class="flex flex-wrap items-center justify-between gap-4">
+        <h4 class="font-extrabold text-xl flex items-center gap-2"><span class="w-2 h-6 bg-emerald rounded-full"></span> Safety is the First Chapter</h4>
+        <span class="text-xs font-bold tracking-widest bg-emerald text-white px-3 py-1.5 rounded-full">24/7 CONTROL ROOM</span>
+      </div>
+      <div class="mt-6 grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-3 text-center">
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-customer-service-2-line text-xl"></i></div><div class="text-xs font-bold mt-2">Control Room</div><div class="text-[11px] text-black/50">24/7 Helpline</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-heart-pulse-line text-xl"></i></div><div class="text-xs font-bold mt-2">Doctors</div><div class="text-[11px] text-black/50">On Board</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-team-line text-xl"></i></div><div class="text-xs font-bold mt-2">Volunteers</div><div class="text-[11px] text-black/50">1 : 15 Ratio</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-map-pin-range-line text-xl"></i></div><div class="text-xs font-bold mt-2">GPS Tracking</div><div class="text-[11px] text-black/50">Live Location</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-hotel-line text-xl"></i></div><div class="text-xs font-bold mt-2">Stays</div><div class="text-[11px] text-black/50">Verified</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-message-3-line text-xl"></i></div><div class="text-xs font-bold mt-2">Parents</div><div class="text-[11px] text-black/50">Daily Updates</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-shield-check-line text-xl"></i></div><div class="text-xs font-bold mt-2">Insurance</div><div class="text-[11px] text-black/50">Covered</div></div>
+        <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="w-10 h-10 mx-auto rounded-xl bg-white flex items-center justify-center text-emerald"><i class="ri-restaurant-line text-xl"></i></div><div class="text-xs font-bold mt-2">Food</div><div class="text-[11px] text-black/50">Hygienic • Veg</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PARENT & SCHOOL TABS -->
+<section id="parents" class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+  <div class="bg-white rounded-[28px] border border-black/5 shadow-sm overflow-hidden reveal">
+    <div class="flex flex-wrap gap-2 p-2 bg-[#F5F7FA] m-2 rounded-2xl w-fit">
+      <button onclick="switchTab('parent')" id="tab-parent" class="tab-btn active px-6 py-2.5 rounded-xl text-sm font-bold bg-midnight text-white">Parent Zone</button>
+      <button onclick="switchTab('school')" id="tab-school" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-black/60 hover:text-midnight">School Dashboard</button>
+      <button onclick="switchTab('sponsor')" id="tab-sponsor" class="tab-btn px-6 py-2.5 rounded-xl text-sm font-semibold text-black/60 hover:text-midnight">Sponsors & CSR</button>
+    </div>
+
+    <!-- Parent -->
+    <div id="panel-parent" class="tab-panel p-6 md:p-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 text-emerald font-bold tracking-widest text-xs"><span class="w-8 h-px bg-emerald"></span> FOR PARENTS</div>
+        <h3 class="font-extrabold text-[28px] md:text-[34px] leading-none mt-3 text-midnight">Your child is safe. <span class="font-light italic font-display text-emerald">And seen.</span></h3>
+        <p class="mt-3 text-black/60 leading-relaxed">Daily updates, live tracking, accommodation photos, food menu, and a direct helpline. We parent with you.</p>
+        <div class="mt-6 grid sm:grid-cols-2 gap-3">
+          <div class="bg-[#F5F7FA] rounded-2xl p-4 flex gap-3"><i class="ri-live-line text-emerald text-xl"></i><div><div class="font-bold text-sm">Live Journey Tracking</div><div class="text-xs text-black/60">See the train move, every hour.</div></div></div>
+          <div class="bg-[#F5F7FA] rounded-2xl p-4 flex gap-3"><i class="ri-image-line text-emerald text-xl"></i><div><div class="font-bold text-sm">Daily Photo Updates</div><div class="text-xs text-black/60">Private gallery for your ward.</div></div></div>
+          <div class="bg-[#F5F7FA] rounded-2xl p-4 flex gap-3"><i class="ri-phone-find-line text-emerald text-xl"></i><div><div class="font-bold text-sm">24/7 Parent Helpline</div><div class="text-xs text-black/60">Control room + coordinator</div></div></div>
+          <div class="bg-[#F5F7FA] rounded-2xl p-4 flex gap-3"><i class="ri-restaurant-2-line text-emerald text-xl"></i><div><div class="font-bold text-sm">Food & Stay Details</div><div class="text-xs text-black/60">Menu, hygiene, room photos</div></div></div>
+        </div>
+        <div class="mt-6 flex gap-3">
+          <button onclick="openRegister()" class="bg-midnight text-white px-6 py-3 rounded-full font-bold text-sm">Talk to Coordinator</button>
+          <a  href="#faq" class="px-6 py-3 rounded-full border border-black/10 font-semibold text-sm hover:bg-black hover:text-white transition">Parent FAQs</a>
+        </div>
+      </div>
+      <div class="bg-[#F5F7FA] rounded-[24px] p-4 shadow-inner">
+        <div class="bg-white rounded-2xl p-4 shadow-sm">
+          <div class="flex items-center justify-between">
+            <div class="font-bold">Parent Dashboard — Preview</div>
+            <span class="text-xs font-bold px-2.5 py-1 rounded-full bg-emerald text-white">LIVE</span>
+          </div>
+          <div class="mt-4 rounded-xl overflow-hidden border border-black/5">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop" class="w-full h-44 object-cover">
+          </div>
+          <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs">
+            <div class="bg-[#E6F6F1] rounded-xl py-3"><div class="font-bold text-emerald">Day 3</div><div class="text-black/60">Munnar</div></div>
+            <div class="bg-[#FFF3E6] rounded-xl py-3"><div class="font-bold text-saffron">18:42</div><div class="text-black/60">Last Update</div></div>
+            <div class="bg-midnight text-white rounded-xl py-3"><div class="font-bold">Safe ✓</div><div class="opacity-70">Status</div></div>
+          </div>
+          <div class="mt-4 space-y-2 text-sm">
+            <div class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald rounded-full"></span> Breakfast done — 08:10 AM</div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 bg-emerald rounded-full"></span> Reached Tea Museum — 10:30 AM</div>
+            <div class="flex items-center gap-2"><span class="w-2 h-2 bg-saffron rounded-full animate-pulse"></span> Now: Trekking — Live Photos Coming</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- School -->
+    <div id="panel-school" class="tab-panel hidden p-6 md:p-10 grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+      <div>
+        <div class="inline-flex items-center gap-2 text-midnight font-bold tracking-widest text-xs"><span class="w-8 h-px bg-midnight"></span> FOR INSTITUTIONS</div>
+        <h3 class="font-extrabold text-[28px] md:text-[34px] leading-none mt-3 text-midnight">One dashboard. <span class="font-light italic font-display">Every student.</span></h3>
+        <p class="mt-3 text-black/60 leading-relaxed">Institution login to manage students, payments, certificates, attendance and reports — with dedicated relationship manager.</p>
+        <ul class="mt-6 space-y-3 text-sm">
+          <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-emerald text-white flex items-center justify-center"><i class="ri-group-line"></i></span> Bulk student management & Excel import</li>
+          <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-midnight text-white flex items-center justify-center"><i class="ri-secure-payment-line"></i></span> Secure Razorpay payments & instant receipts</li>
+          <li class="flex gap-3"><span class="w-7 h-7 rounded-full bg-saffron text-white flex items-center justify-center"><i class="ri-file-paper-line"></i></span> Auto-generated certificates & analytics</li>
+        </ul>
+        <button onclick="openRegister()" class="mt-6 bg-midnight text-white px-6 py-3 rounded-full font-bold text-sm">Request Institution Login</button>
+      </div>
+      <div class="bg-midnight rounded-[24px] p-6 text-white">
+        <div class="flex items-center justify-between"><div class="font-bold">School Dashboard</div><span class="text-xs bg-white text-midnight px-3 py-1 rounded-full font-bold">DEMO</span></div>
+        <div class="mt-4 grid grid-cols-3 gap-3 text-center">
+          <div class="bg-white/10 rounded-xl py-4"><div class="font-space font-bold text-xl">42</div><div class="text-xs opacity-70">STUDENTS</div></div>
+          <div class="bg-white/10 rounded-xl py-4"><div class="font-space font-bold text-xl">38</div><div class="text-xs opacity-70">PAID</div></div>
+          <div class="bg-emerald rounded-xl py-4"><div class="font-space font-bold text-xl">4</div><div class="text-xs">PENDING</div></div>
+        </div>
+        <div class="mt-4 bg-white text-midnight rounded-xl p-4">
+          <div class="text-xs font-bold tracking-widest opacity-60">RECENT PAYMENTS</div>
+          <div class="mt-2 space-y-2 text-sm">
+            <div class="flex justify-between"><span>Ananya S. — BSC</span><span class="font-bold text-emerald">Paid ✓</span></div>
+            <div class="flex justify-between"><span>Rahul K. — BCOM</span><span class="font-bold text-emerald">Paid ✓</span></div>
+            <div class="flex justify-between"><span>Meera J. — BA</span><span class="font-bold text-saffron">Pending</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Sponsor -->
+    <div id="panel-sponsor" class="tab-panel hidden p-6 md:p-10">
+      <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-8 items-start">
+        <div>
+          <div class="inline-flex items-center gap-2 text-saffron font-bold tracking-widest text-xs"><span class="w-8 h-px bg-saffron"></span> PARTNERS & SPONSORS</div>
+          <h3 class="font-extrabold text-[28px] md:text-[34px] leading-none mt-3 text-midnight">Your brand. <span class="font-light italic font-display text-saffron">A national stage.</span></h3>
+          <p class="mt-3 text-black/60 leading-relaxed">Associate with South India’s largest student movement. CSR-aligned, media-rich, youth-trusted.</p>
+          <div class="mt-6 grid grid-cols-3 gap-3 text-center">
+            <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="font-space font-bold text-lg">2M+</div><div class="text-xs font-bold tracking-widest opacity-60">REACH</div></div>
+            <div class="bg-[#F5F7FA] rounded-2xl p-4"><div class="font-space font-bold text-lg">500+</div><div class="text-xs font-bold tracking-widest opacity-60">MEDIA MENTIONS</div></div>
+            <div class="bg-midnight text-white rounded-2xl p-4"><div class="font-space font-bold text-lg">28</div><div class="text-xs font-bold tracking-widest">STATES</div></div>
+          </div>
+          <div class="mt-6 flex flex-wrap gap-2 text-xs font-semibold">
+            <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Title Sponsor</span>
+            <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Co-Powered By</span>
+            <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Ecology Partner</span>
+            <span class="px-3 py-1.5 rounded-full bg-white border border-black/10">Knowledge Partner</span>
+          </div>
+        </div>
+        <div class="bg-[#F5F7FA] rounded-[24px] p-6">
+          <div class="font-bold">Brand Visibility</div>
+          <div class="mt-4 flex flex-wrap gap-3 opacity-60 grayscale">
+            <div class="bg-white px-6 py-3 rounded-xl font-extrabold tracking-widest text-sm">TITAN</div>
+            <div class="bg-white px-6 py-3 rounded-xl font-extrabold tracking-widest text-sm">INFOSYS</div>
+            <div class="bg-white px-6 py-3 rounded-xl font-extrabold tracking-widest text-sm">BYJU’S</div>
+            <div class="bg-white px-6 py-3 rounded-xl font-extrabold tracking-widest text-sm">KSRTC</div>
+            <div class="bg-white px-6 py-3 rounded-xl font-extrabold tracking-widest text-sm">KERALA TOURISM</div>
+          </div>
+          <button class="mt-6 w-full bg-saffron text-white py-3 rounded-full font-bold hover:bg-[#e07d1f] transition">Download Sponsorship Deck →</button>
+          <div class="text-xs text-center text-black/50 mt-2">CSR Eligible • 80G Available</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section id="gallery" class="bg-white border-y border-black/5">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+    <div class="flex flex-wrap items-end justify-between gap-6">
+      <div class="reveal">
+        <div class="text-emerald font-bold tracking-[0.2em] text-xs">GALLERY</div>
+        <h3 class="font-sora font-extrabold text-[28px] md:text-[42px] leading-none mt-3 text-midnight">Moments that <span class="font-light italic font-display">stay forever.</span></h3>
+      </div>
+      <div class="flex gap-2 reveal">
+        <button onclick="openVideo()" class="bg-midnight text-white px-5 py-2.5 rounded-full text-sm font-bold flex items-center gap-2"><i class="ri-movie-2-line"></i> Watch Reels</button>
+        <button class="px-5 py-2.5 rounded-full border border-black/10 text-sm font-semibold">View Albums</button>
+      </div>
+    </div>
+
+    <div class="mt-8 masonry">
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden relative group cursor-pointer" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?q=80&w=800&auto=format&fit=crop" class="w-full object-cover">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition"></div>
+        <div class="absolute bottom-3 left-3 bg-white/90 backdrop-blur px-3 py-1 rounded-full text-xs font-bold">Munnar Sunrise • 2024</div>
+      </div>
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden relative group cursor-pointer" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?q=80&w=800&auto=format&fit=crop" class="w-full object-cover">
+        <div class="absolute bottom-3 left-3 bg-emerald text-white px-3 py-1 rounded-full text-xs font-bold">Kochi • Cultural Night</div>
+      </div>
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden relative group cursor-pointer" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1602216056096-3b40cc0c9944?q=80&w=800&auto=format&fit=crop" class="w-full object-cover">
+        <div class="absolute bottom-3 left-3 bg-midnight text-white px-3 py-1 rounded-full text-xs font-bold">Alleppey • Backwaters</div>
+      </div>
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden relative group cursor-pointer" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?q=80&w=800&auto=format&fit=crop" class="w-full h-[360px] object-cover">
+        <div class="absolute inset-0 flex items-center justify-center"><span class="w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-xl"><i class="ri-play-fill text-2xl ml-1"></i></span></div>
+        <div class="absolute bottom-3 left-3 bg-saffron text-white px-3 py-1 rounded-full text-xs font-bold">Drone Film • 4K</div>
+      </div>
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden relative group cursor-pointer" onclick="openLightbox(this)">
+        <img src="https://images.unsplash.com/photo-1548013146-72479768bada?q=80&w=800&auto=format&fit=crop" class="w-full object-cover">
+        <div class="absolute bottom-3 left-3 bg-white/90 px-3 py-1 rounded-full text-xs font-bold">Wayanad • Tribal Visit</div>
+      </div>
+      <div class="break-inside-avoid mb-4 rounded-[20px] overflow-hidden bg-midnight text-white p-6 flex flex-col justify-center">
+        <div class="text-golden font-bold tracking-widest text-xs">STUDENT STORY</div>
+        <p class="font-display italic text-[22px] leading-tight mt-2">“I boarded as a student. I returned as a storyteller for my state.”</p>
+        <div class="mt-4 flex items-center gap-3"><img src="https://i.pravatar.cc/100?img=26" class="w-9 h-9 rounded-full object-cover"><div><div class="font-bold text-sm">Aparna, Vijayawada</div><div class="text-xs opacity-70">Yaan ’23 • Now Volunteer</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+  <div class="flex flex-wrap items-center justify-between gap-4 reveal">
+    <h3 class="font-extrabold text-[24px] md:text-[32px] text-midnight">What families <span class="font-light italic font-display">say.</span></h3>
+    <div class="flex items-center gap-2">
+      <button onclick="slideTest(-1)" class="w-10 h-10 rounded-full border border-black/10 flex items-center justify-center hover:bg-midnight hover:text-white transition"><i class="ri-arrow-left-line"></i></button>
+      <button onclick="slideTest(1)" class="w-10 h-10 rounded-full bg-midnight text-white flex items-center justify-center hover:bg-black transition"><i class="ri-arrow-right-line"></i></button>
+    </div>
+  </div>
+  <div class="mt-8 relative overflow-hidden">
+    <div id="testWrap" class="flex transition-transform duration-500 will-change-transform">
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-3">
+        <div class="bg-[#F5F7FA] rounded-[24px] p-7 h-full">
+          <div class="flex gap-1 text-golden"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+          <p class="mt-3 text-[15px] leading-relaxed">“As a mother, safety was my worry. Daily photos, live location, and the coordinator’s calls made me feel my son was with family.”</p>
+          <div class="mt-5 flex items-center gap-3"><img src="https://i.pravatar.cc/100?img=5" class="w-10 h-10 rounded-full object-cover"><div><div class="font-bold text-sm">Sunitha R.</div><div class="text-xs text-black/60">Parent, Guntur • 2024</div></div></div>
+        </div>
+      </div>
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-3">
+        <div class="bg-white border border-black/5 rounded-[24px] p-7 h-full shadow-sm">
+          <div class="flex gap-1 text-golden"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+          <p class="mt-3 text-[15px] leading-relaxed">“Our college sent 42 students. The discipline, learning design, and post-Yaan projects were exceptional. We’ll send 100 next year.”</p>
+          <div class="mt-5 flex items-center gap-3"><img src="https://i.pravatar.cc/100?img=11" class="w-10 h-10 rounded-full object-cover"><div><div class="font-bold text-sm">Dr. K. Suresh</div><div class="text-xs text-black/60">Principal, KBN College</div></div></div>
+        </div>
+      </div>
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-3">
+        <div class="bg-emerald text-white rounded-[24px] p-7 h-full">
+          <div class="flex gap-1 text-golden"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+          <p class="mt-3 text-[15px] leading-relaxed">“I never thought Kerala’s paddy fields could teach me leadership. Yaan changed how I see India — and myself.”</p>
+          <div class="mt-5 flex items-center gap-3"><img src="https://i.pravatar.cc/100?img=19" class="w-10 h-10 rounded-full object-cover"><div><div class="font-bold text-sm">Harsha Vardhan</div><div class="text-xs opacity-80">Student, B.Tech • 2023</div></div></div>
+        </div>
+      </div>
+      <div class="min-w-full md:min-w-[50%] lg:min-w-[33.333%] p-3">
+        <div class="bg-saffron text-white rounded-[24px] p-7 h-full">
+          <div class="flex gap-1 text-white"><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i><i class="ri-star-fill"></i></div>
+          <p class="mt-3 text-[15px] leading-relaxed">“Sponsoring Yaan gave our brand authentic youth love. The ROI on goodwill is unmatched.”</p>
+          <div class="mt-5 flex items-center gap-3"><img src="https://i.pravatar.cc/100?img=8" class="w-10 h-10 rounded-full object-cover"><div><div class="font-bold text-sm">Sponsor, CSR Head</div><div class="text-xs opacity-80">Leading FMCG</div></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="bg-[#F5F7FA] border-y border-black/5">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20 grid lg:grid-cols-[0.9fr_1.1fr] gap-10">
+    <div class="reveal">
+      <div class="text-emerald font-bold tracking-[0.2em] text-xs">FAQ</div>
+      <h3 class="font-extrabold text-[30px] md:text-[40px] leading-none mt-3 text-midnight">Clarity before <br><span class="font-light italic font-display">you board.</span></h3>
+      <p class="mt-4 text-black/60 leading-relaxed">Everything parents, students and institutions ask — answered with honesty.</p>
+      <div class="mt-6 bg-white rounded-2xl p-5 border border-black/5 flex items-center gap-3">
+        <div class="w-10 h-10 rounded-xl bg-emerald text-white flex items-center justify-center"><i class="ri-customer-service-line text-xl"></i></div>
+        <div><div class="font-bold">Need human help?</div><div class="text-sm text-black/60">Call +91 90000 11223 • 9AM–9PM</div></div>
+      </div>
+    </div>
+    <div class="space-y-3 reveal">
+      <div class="faq bg-white rounded-2xl border border-black/5 overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left" onclick="toggleFaq(this)">Who can join Jignasayaan? <i class="ri-add-line text-xl transition"></i></button>
+        <div class="px-5 pb-5 text-sm text-black/60 leading-relaxed hidden">Students from Intermediate, Degree, and PG — individually or via institutions. Age 16–26. No prior travel experience needed. Medical fitness declaration required.</div>
+      </div>
+      <div class="faq bg-white rounded-2xl border border-black/5 overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left" onclick="toggleFaq(this)">What is included in the fee? <i class="ri-add-line text-xl transition"></i></button>
+        <div class="px-5 pb-5 text-sm text-black/60 leading-relaxed hidden">Train travel, accommodation (3/4 sharing), pure veg food, entry tickets, workshops, medical support, insurance, kit, certificate, and 24/7 coordination. Personal shopping excluded.</div>
+      </div>
+      <div class="faq bg-white rounded-2xl border border-black/5 overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left" onclick="toggleFaq(this)">How is safety ensured, especially for girls? <i class="ri-add-line text-xl transition"></i></button>
+        <div class="px-5 pb-5 text-sm text-black/60 leading-relaxed hidden">Separate coaches & floors, women volunteers & coordinators, verified stays, 24/7 control room, GPS, doctor on board, and daily parent updates. Safety is non-negotiable.</div>
+      </div>
+      <div class="faq bg-white rounded-2xl border border-black/5 overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left" onclick="toggleFaq(this)">Do I get a certificate? <i class="ri-add-line text-xl transition"></i></button>
+        <div class="px-5 pb-5 text-sm text-black/60 leading-relaxed hidden">Yes — National Integration & Leadership certificate jointly with partner institutions, plus credits for institutional records and alumni network access.</div>
+      </div>
+      <div class="faq bg-white rounded-2xl border border-black/5 overflow-hidden">
+        <button class="w-full flex justify-between items-center p-5 font-semibold text-left" onclick="toggleFaq(this)">How to register as a college? <i class="ri-add-line text-xl transition"></i></button>
+        <div class="px-5 pb-5 text-sm text-black/60 leading-relaxed hidden">Click “Join Expedition” → Institution Details → Upload student list (Excel). Our team verifies and opens your school dashboard in 24 hours.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section id="register" class="relative overflow-hidden bg-midnight">
+  <div class="absolute inset-0">
+    <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=2000&auto=format&fit=crop" class="w-full h-full object-cover opacity-30">
+    <div class="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/80 to-emerald/30"></div>
+  </div>
+  <div class="relative max-w-[1440px] mx-auto px-4 md:px-8 py-14 md:py-20">
+    <div class="bg-white rounded-[28px] p-6 md:p-10 flex flex-col lg:flex-row items-center justify-between gap-8 shadow-[0_30px_80px_rgba(0,0,0,0.25)]">
+      <div>
+        <div class="inline-flex items-center gap-2 bg-saffron text-white text-xs font-extrabold tracking-widest px-3 py-1.5 rounded-full">REGISTRATIONS CLOSING SOON • LIMITED COACHES</div>
+        <h3 class="font-extrabold text-[28px] md:text-[40px] leading-none mt-4 text-midnight">This is your Yaan. <br><span class="font-light italic font-display text-emerald">This is your time for Keralam.</span></h3>
+        <p class="mt-3 text-black/60 max-w-[560px] leading-relaxed">South India’s largest student yaan — from Vijayawada to the heart of Kerala and back, with stories you’ll carry for life.</p>
+        <div class="mt-6 flex flex-wrap gap-3 text-xs font-bold">
+          <span class="px-3 py-1.5 rounded-full bg-[#E6F6F1] text-emerald border border-[#BFE9DE]">No Interview • First Come, First Served</span>
+          <span class="px-3 py-1.5 rounded-full bg-[#FFF3E6] text-[#9A4A00] border border-[#FFD9A8]">EMI Available</span>
+          <span class="px-3 py-1.5 rounded-full bg-[#EEF2FF] text-midnight border border-[#C7D2FE]">Group Discounts</span>
+        </div>
+      </div>
+      <div class="bg-midnight text-white rounded-[24px] p-6 w-full lg:w-[380px] shrink-0">
+        <div class="text-golden font-bold tracking-widest text-xs">NEXT YAAN DEPARTS IN</div>
+        <div id="countdown2" class="font-space font-bold text-3xl mt-2">42D : 08H : 21M : 09S</div>
+        <div class="mt-5 space-y-3">
+          <button onclick="openRegister()" class="w-full bg-saffron hover:bg-[#e07d1f] text-white py-4 rounded-full font-bold flex items-center justify-center gap-2 transition">Secure My Seat — Pay ₹2,000 Advance <i class="ri-arrow-right-line"></i></button>
+          <button onclick="openVideo()" class="w-full bg-white/10 hover:bg-white hover:text-midnight text-white py-3 rounded-full font-semibold transition">Download Brochure (PDF)</button>
+        </div>
+        <div class="mt-4 text-xs text-white/60 text-center">100% Refundable till 15 days before departure • UPI • Cards • Net Banking</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer id="contact" class="bg-[#060F1F] text-white">
+  <div class="max-w-[1440px] mx-auto px-4 md:px-8 pt-12 pb-8">
+    <div class="grid md:grid-cols-2 lg:grid-cols-5 gap-10">
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-3">
+          <div class="w-10 h-10 bg-white rounded-xl flex items-center justify-center text-midnight font-bold">JY</div>
+          <div class="leading-none"><div class="font-extrabold tracking-[0.14em] text-[15px]">JIGNASAYAAN</div><div class="text-[10px] tracking-[0.22em] font-semibold text-golden -mt-0.5">THE MODERN DESAYATANA</div></div>
+        </div>
+        <p class="mt-4 text-sm leading-relaxed text-white/60 max-w-[420px]">A national experiential learning movement by Jignasa. Connecting South to Bharat through education, culture, and transformation. This Time for Keralam.</p>
+        <div class="mt-6 flex gap-3">
+          <a  href="#" onclick="return false" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-midnight transition"><i class="ri-instagram-line"></i></a>
+          <a  href="#" onclick="return false" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-midnight transition"><i class="ri-youtube-line"></i></a>
+          <a  href="#" onclick="return false" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-midnight transition"><i class="ri-linkedin-line"></i></a>
+          <a  href="#" onclick="return false" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-midnight transition"><i class="ri-twitter-x-line"></i></a>
+        </div>
+      </div>
+      <div>
+        <div class="font-bold text-sm tracking-widest">EXPLORE</div>
+        <ul class="mt-4 space-y-2.5 text-sm text-white/60">
+          <li><a  href="#journey" class="hover:text-white">Journey Map</a></li>
+          <li><a  href="#destinations" class="hover:text-white">Destinations</a></li>
+          <li><a  href="#experience" class="hover:text-white">Student Experience</a></li>
+          <li><a  href="#gallery" class="hover:text-white">Gallery</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-sm tracking-widest">SUPPORT</div>
+        <ul class="mt-4 space-y-2.5 text-sm text-white/60">
+          <li><a  href="#parents" class="hover:text-white">Parent Zone</a></li>
+          <li><a  href="#faq" class="hover:text-white">FAQs</a></li>
+          <li><a  href="#" onclick="openRegister(); return false;" class="hover:text-white">Register</a></li>
+          <li><a  href="#contact" class="hover:text-white">Contact Us</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="font-bold text-sm tracking-widest">CONTACT</div>
+        <ul class="mt-4 space-y-3 text-sm text-white/60">
+          <li class="flex gap-2"><i class="ri-map-pin-line text-golden mt-0.5"></i> Jignasa Office, Vijayawada, AP — 520001</li>
+          <li class="flex gap-2"><i class="ri-phone-line text-golden mt-0.5"></i> +91 90000 11223</li>
+          <li class="flex gap-2"><i class="ri-mail-line text-golden mt-0.5"></i> yaan@jignasayaan.in</li>
+        </ul>
+      </div>
+    </div>
+    <div class="mt-10 pt-6 border-t border-white/10 flex flex-col md:flex-row gap-3 justify-between items-center text-xs text-white/50">
+      <div>© 2026 Jignasayaan • Jignasa • South for Bharat. Made with ♥ in Vijayawada & Kochi.</div>
+      <div class="flex gap-4"><a  href="#" onclick="return false" class="hover:text-white">Privacy</a><a  href="#" onclick="return false" class="hover:text-white">Terms</a><a  href="#" onclick="return false" class="hover:text-white">Refund Policy</a></div>
+    </div>
+  </div>
+</footer>
+
+<!-- Mobile Bottom Nav -->
+<div class="lg:hidden fixed bottom-4 inset-x-4 z-30 glass rounded-full px-2 py-2 flex justify-between items-center shadow-xl border border-black/5">
+  <a  href="#journey" class="flex flex-col items-center px-4 py-1 text-midnight"><i class="ri-route-line text-lg"></i><span class="text-[10px] font-bold tracking-widest">JOURNEY</span></a>
+  <a  href="#destinations" class="flex flex-col items-center px-4 py-1 text-black/60"><i class="ri-map-line text-lg"></i><span class="text-[10px] font-semibold">PLACES</span></a>
+  <button onclick="openRegister()" class="bg-saffron text-white px-6 py-3 rounded-full font-bold text-sm shadow">JOIN NOW</button>
+  <a  href="#gallery" class="flex flex-col items-center px-4 py-1 text-black/60"><i class="ri-gallery-line text-lg"></i><span class="text-[10px] font-semibold">GALLERY</span></a>
+  <a  href="#faq" class="flex flex-col items-center px-4 py-1 text-black/60"><i class="ri-question-line text-lg"></i><span class="text-[10px] font-semibold">HELP</span></a>
+</div>
+
+<!-- VIDEO MODAL -->
+<div id="videoModal" class="fixed inset-0 z-[60] hidden">
+  <div class="absolute inset-0 bg-midnight/80 backdrop-blur-md" onclick="closeVideo()"></div>
+  <div class="relative max-w-4xl mx-auto mt-[6vh] p-4">
+    <div class="bg-black rounded-[24px] overflow-hidden shadow-2xl">
+      <div class="flex justify-between items-center p-4 text-white">
+        <div class="font-bold">Jignasayaan — The Film (1:42)</div>
+        <button onclick="closeVideo()" class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center hover:bg-white hover:text-black transition"><i class="ri-close-line text-xl"></i></button>
+      </div>
+      <div class="aspect-video bg-black flex items-center justify-center relative overflow-hidden">
+        <img src="https://images.unsplash.com/photo-1474487548417-781cb71495f3?q=80&w=1200&auto=format&fit=crop" class="w-full h-full object-cover opacity-60">
+        <button class="absolute w-20 h-20 bg-white rounded-full flex items-center justify-center shadow-xl"><i class="ri-play-fill text-4xl ml-1 text-midnight"></i></button>
+        <div class="absolute bottom-4 left-4 bg-white/90 px-3 py-1 rounded-full text-xs font-bold">Demo — Replace with Vimeo/YouTube embed</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" class="fixed inset-0 z-[60] hidden">
+  <div class="absolute inset-0 bg-black/80 backdrop-blur" onclick="closeLightbox()"></div>
+  <div class="relative max-w-4xl mx-auto mt-[5vh] p-4">
+    <img id="lightboxImg" src="" class="w-full max-h-[80vh] object-contain rounded-2xl bg-white">
+    <button onclick="closeLightbox()" class="absolute top-6 right-6 w-10 h-10 bg-white rounded-full flex items-center justify-center"><i class="ri-close-line text-xl"></i></button>
+  </div>
+</div>
+
+<!-- REGISTER MODAL -->
+<div id="registerModal" class="fixed inset-0 z-[70] hidden">
+  <div class="absolute inset-0 bg-midnight/60 backdrop-blur-md" onclick="closeRegister()"></div>
+  <div class="relative max-w-[720px] mx-auto mt-[3vh] md:mt-[6vh] p-4">
+    <div class="bg-white rounded-[28px] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] max-h-[92vh] overflow-y-auto custom-scrollbar">
+      <div class="sticky top-0 bg-white z-10 p-6 border-b border-black/5">
+        <div class="flex justify-between items-start gap-4">
+          <div>
+            <div class="text-emerald font-bold tracking-widest text-xs">REGISTRATION • 8 STEPS</div>
+            <h4 class="font-extrabold text-xl text-midnight mt-1">Join the Expedition</h4>
+            <p class="text-sm text-black/60">Secure your seat in 2 minutes. Pay advance to confirm.</p>
+          </div>
+          <button onclick="closeRegister()" class="w-9 h-9 rounded-full bg-[#F5F7FA] flex items-center justify-center hover:bg-black hover:text-white transition"><i class="ri-close-line text-xl"></i></button>
+        </div>
+        <div class="mt-5">
+          <div class="flex justify-between text-[11px] font-bold tracking-widest text-black/40"><span>PROGRESS</span><span id="stepLabel">STEP 1 OF 8</span></div>
+          <div class="mt-2 h-2 bg-[#F5F7FA] rounded-full overflow-hidden"><div id="stepBar" class="h-full bg-emerald transition-all" style="width:12.5%"></div></div>
+          <div class="mt-3 flex gap-1.5">
+            <div class="step-dot w-8 h-1.5 rounded-full bg-emerald"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div><div class="step-dot w-8 h-1.5 rounded-full bg-black/10"></div>
+          </div>
+        </div>
+      </div>
+
+      <form id="regForm" class="p-6 space-y-6" onsubmit="return false;">
+        <!-- Step 1 -->
+        <div class="reg-step" data-step="1">
+          <h5 class="font-bold text-midnight">1 — Personal Info</h5>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <label class="text-sm font-semibold">Full Name<input required name="name" placeholder="e.g. Ananya Sharma" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald bg-white"></label>
+            <label class="text-sm font-semibold">Phone<input required name="phone" placeholder="+91 9xxxx xxxxx" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald"></label>
+            <label class="text-sm font-semibold">Email<input required type="email" name="email" placeholder="you@college.edu" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3 focus:outline-none focus:border-emerald"></label>
+            <label class="text-sm font-semibold">Gender<select name="gender" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3 bg-white"><option>Female</option><option>Male</option><option>Other</option><option>Prefer not to say</option></select></label>
+          </div>
+        </div>
+        <!-- Step 2 -->
+        <div class="reg-step hidden" data-step="2">
+          <h5 class="font-bold text-midnight">2 — Institution Details</h5>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <label class="text-sm font-semibold">Institution Name<input required name="institution" placeholder="KBN College, Vijayawada" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+            <label class="text-sm font-semibold">Course & Year<input required name="course" placeholder="B.Sc 2nd Year" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+            <label class="text-sm font-semibold">City<input name="city" placeholder="Vijayawada" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+            <label class="text-sm font-semibold">ID Number (College)<input name="idnum" placeholder="Optional" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+          </div>
+        </div>
+        <!-- Step 3 -->
+        <div class="reg-step hidden" data-step="3">
+          <h5 class="font-bold text-midnight">3 — Emergency Contact</h5>
+          <div class="mt-4 grid md:grid-cols-2 gap-4">
+            <label class="text-sm font-semibold">Contact Name<input required name="emer_name" placeholder="Parent / Guardian" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+            <label class="text-sm font-semibold">Relation<select name="emer_rel" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3 bg-white"><option>Parent</option><option>Guardian</option><option>Sibling</option><option>Other</option></select></label>
+            <label class="text-sm font-semibold">Phone<input required name="emer_phone" placeholder="+91 ..." class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+            <label class="text-sm font-semibold">Alternate Phone<input name="emer_alt" placeholder="Optional" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></label>
+          </div>
+        </div>
+        <!-- Step 4 -->
+        <div class="reg-step hidden" data-step="4">
+          <h5 class="font-bold text-midnight">4 — Medical Declaration</h5>
+          <div class="mt-4 grid gap-4">
+            <label class="text-sm font-semibold">Any medical conditions? <textarea name="medical" rows="3" placeholder="Allergies, asthma, medication — or write 'None'" class="mt-1 w-full border border-black/10 rounded-xl px-4 py-3"></textarea></label>
+            <label class="flex gap-3 text-sm"><input type="checkbox" required class="mt-1"> <span>I confirm I am medically fit to travel and will carry prescribed medicines. I have read the safety guidelines.</span></label>
+          </div>
+        </div>
+        <!-- Step 5 -->
+        <div class="reg-step hidden" data-step="5">
+          <h5 class="font-bold text-midnight">5 — Payment</h5>
+          <div class="mt-4 bg-[#F5F7FA] rounded-2xl p-5">
+            <div class="flex justify-between items-center"><span class="font-bold">Advance to Confirm</span><span class="font-space font-bold text-xl text-emerald">₹2,000</span></div>
+            <div class="text-xs text-black/60 mt-1">Balance payable in 2 instalments. 100% refundable till 15 days before departure.</div>
+            <div class="mt-4 grid grid-cols-3 gap-2 text-center text-xs font-bold">
+              <div class="bg-white rounded-xl py-3 border border-black/5">UPI</div><div class="bg-white rounded-xl py-3 border border-black/5">Cards</div><div class="bg-white rounded-xl py-3 border border-black/5">Net Banking</div>
+            </div>
+            <label class="flex gap-2 text-xs mt-4"><input type="checkbox" required> I agree to Terms, Refund Policy and Code of Conduct.</label>
+          </div>
+        </div>
+        <!-- Step 6 -->
+        <div class="reg-step hidden" data-step="6">
+          <h5 class="font-bold text-midnight">6 — Confirmation</h5>
+          <div class="mt-4 bg-emerald text-white rounded-2xl p-6 text-center">
+            <div class="w-14 h-14 bg-white text-emerald rounded-full flex items-center justify-center mx-auto text-3xl"><i class="ri-check-line"></i></div>
+            <div class="font-extrabold text-xl mt-3">You’re In. Welcome aboard!</div>
+            <div class="text-sm opacity-90 mt-1">Your application is confirmed. Check email & WhatsApp for next steps.</div>
+            <div class="mt-4 bg-white text-midnight rounded-xl p-3 text-sm font-mono">YAAN2026-<span id="yaanId">KLM-4829</span></div>
+          </div>
+        </div>
+        <!-- Step 7 -->
+        <div class="reg-step hidden" data-step="7">
+          <h5 class="font-bold text-midnight">7 — Student Dashboard</h5>
+          <div class="mt-4 bg-white border border-black/5 rounded-2xl p-5">
+            <div class="font-bold">Your Dashboard is Ready</div>
+            <div class="mt-3 grid grid-cols-3 gap-3 text-center text-xs">
+              <div class="bg-[#F5F7FA] rounded-xl p-3"><div class="font-bold">Kit</div><div class="text-black/60">T-shirt • Cap • Journal</div></div>
+              <div class="bg-[#F5F7FA] rounded-xl p-3"><div class="font-bold">Group</div><div class="text-black/60">WhatsApp Added</div></div>
+              <div class="bg-emerald text-white rounded-xl p-3"><div class="font-bold">Status</div><div>Confirmed ✓</div></div>
+            </div>
+            <div class="mt-4 text-sm text-black/60">Login at <span class="font-semibold text-midnight">dashboard.jignasayaan.in</span> with your phone number.</div>
+          </div>
+        </div>
+        <!-- Step 8 -->
+        <div class="reg-step hidden" data-step="8">
+          <h5 class="font-bold text-midnight">8 — Journey Access Pass</h5>
+          <div class="mt-4 bg-midnight text-white rounded-2xl p-6 relative overflow-hidden">
+            <div class="absolute -right-10 -top-10 w-40 h-40 bg-emerald/20 rounded-full blur-2xl"></div>
+            <div class="flex justify-between items-start">
+              <div>
+                <div class="text-golden tracking-widest text-xs font-bold">JIGNASAYAAN • ACCESS PASS</div>
+                <div class="font-extrabold text-xl mt-1">VIJAYAWADA → KERALA</div>
+                <div class="text-sm opacity-70">This Time for Keralam • South for Bharat</div>
+              </div>
+              <div class="w-12 h-12 bg-white rounded-xl flex items-center justify-center text-midnight font-bold">JY</div>
+            </div>
+            <div class="mt-6 flex gap-4 items-center">
+              <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=JIGNASAYAAN2026" class="w-20 h-20 rounded-xl bg-white p-1">
+              <div class="text-xs leading-relaxed opacity-80">Show this pass at boarding. Carry valid college ID & medical kit. <br><span class="font-bold text-golden">Departure: Vijayawada Jn • 06:00 AM</span></div>
+            </div>
+            <button onclick="closeRegister()" class="mt-6 w-full bg-white text-midnight py-3 rounded-full font-bold">Done — See You on the Yaan!</button>
+          </div>
+        </div>
+
+        <div class="flex gap-3 pt-2">
+          <button id="prevBtn" type="button" onclick="prevStep()" class="hidden flex-1 border border-black/10 py-3 rounded-full font-bold hover:bg-black hover:text-white transition">Back</button>
+          <button id="nextBtn" type="button" onclick="nextStep()" class="flex-1 bg-midnight text-white py-3 rounded-full font-bold hover:bg-black transition flex items-center justify-center gap-2">Continue <i class="ri-arrow-right-line"></i></button>
+        </div>
+        <div class="text-center text-xs text-black/40">Need help? WhatsApp +91 90000 11223</div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<script>
+// Mobile menu
+document.getElementById('menuBtn').addEventListener('click',()=>{document.getElementById('mobileMenu').classList.toggle('hidden')})
+// Reveal on scroll
+const observer=new IntersectionObserver((entries)=>{entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('in')})},{threshold:0.12})
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el))
+// Journey train progress
+const journey=document.getElementById('journey'), train=document.getElementById('train'), progressLine=document.getElementById('progressLine')
+function updateJourney(){
+  if(!journey) return
+  const rect=journey.getBoundingClientRect()
+  const vh=window.innerHeight
+  const total=rect.height - vh*0.3
+  let p=0
+  if(rect.top < vh*0.6){ p = Math.min(100, Math.max(0, ((vh*0.6 - rect.top)/ (total+vh*0.4))*100 )) }
+  if(train) train.style.top = (8 + p*0.84)+'%'
+  if(progressLine) progressLine.style.height = (8 + p*0.84)+'%'
+}
+window.addEventListener('scroll', updateJourney, {passive:true})
+updateJourney()
+// Countdown
+function tick(){
+  const target=new Date('2026-12-20T06:00:00+05:30').getTime()
+  const now=Date.now()
+  let diff=Math.max(0, target-now)
+  const d=Math.floor(diff/86400000), h=Math.floor(diff%86400000/3600000), m=Math.floor(diff%3600000/60000), s=Math.floor(diff%60000/1000)
+  const fmt=`${String(d).padStart(2,'0')}D : ${String(h).padStart(2,'0')}H : ${String(m).padStart(2,'0')}M : ${String(s).padStart(2,'0')}S`
+  const a=document.getElementById('countdown'), b=document.getElementById('countdown2')
+  if(a) a.textContent=fmt
+  if(b) b.textContent=fmt
+}
+setInterval(tick,1000);tick()
+// Tabs
+function switchTab(name){
+  document.querySelectorAll('.tab-panel').forEach(p=>p.classList.add('hidden'))
+  document.getElementById('panel-'+name).classList.remove('hidden')
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active','bg-midnight','text-white');b.classList.add('text-black/60')})
+  const active=document.getElementById('tab-'+name)
+  active.classList.add('active','bg-midnight','text-white');active.classList.remove('text-black/60')
+}
+// Destination filter
+document.querySelectorAll('.filter-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.filter-btn').forEach(b=>{b.classList.remove('active','bg-midnight','text-white');b.classList.add('text-black/60')})
+    btn.classList.add('active','bg-midnight','text-white');btn.classList.remove('text-black/60')
+    const f=btn.dataset.filter
+    document.querySelectorAll('#destinationGrid [data-cat]').forEach(card=>{
+      const cat=card.dataset.cat
+      card.style.display = (f==='all' || cat.includes(f)) ? '' : 'none'
+    })
+  })
+})
+// FAQ
+function toggleFaq(btn){
+  const body=btn.nextElementSibling
+  const icon=btn.querySelector('i')
+  const open=!body.classList.contains('hidden')
+  document.querySelectorAll('.faq div').forEach(d=>d.classList.add('hidden'))
+  document.querySelectorAll('.faq i').forEach(i=>{i.className='ri-add-line text-xl transition'})
+  if(!open){body.classList.remove('hidden');icon.className='ri-subtract-line text-xl transition'}
+}
+// Testimonial slider
+let testIndex=0
+function slideTest(dir){
+  const wrap=document.getElementById('testWrap')
+  const total=4, perView= window.innerWidth>=1024?3: window.innerWidth>=768?2:1
+  const max= total - perView
+  testIndex=Math.max(0, Math.min(max, testIndex+dir))
+  wrap.style.transform=`translateX(-${testIndex*(100/perView)}%)`
+}
+// Video modal
+function openVideo(){document.getElementById('videoModal').classList.remove('hidden');document.body.style.overflow='hidden'}
+function closeVideo(){document.getElementById('videoModal').classList.add('hidden');document.body.style.overflow=''}
+function openLightbox(el){
+  const img=el.querySelector('img')
+  document.getElementById('lightboxImg').src=img.src
+  document.getElementById('lightbox').classList.remove('hidden');document.body.style.overflow='hidden'
+}
+function closeLightbox(){document.getElementById('lightbox').classList.add('hidden');document.body.style.overflow=''}
+// Register modal steps
+let curStep=1
+function openRegister(){document.getElementById('registerModal').classList.remove('hidden');document.body.style.overflow='hidden';curStep=1;updateSteps()}
+function closeRegister(){document.getElementById('registerModal').classList.add('hidden');document.body.style.overflow=''}
+function updateSteps(){
+  document.querySelectorAll('.reg-step').forEach(s=>s.classList.toggle('hidden', parseInt(s.dataset.step)!==curStep))
+  document.getElementById('stepLabel').textContent=`STEP ${curStep} OF 8`
+  document.getElementById('stepBar').style.width=(curStep/8*100)+'%'
+  document.querySelectorAll('.step-dot').forEach((d,i)=>{d.className='step-dot w-8 h-1.5 rounded-full '+(i<curStep?'bg-emerald':'bg-black/10')})
+  document.getElementById('prevBtn').classList.toggle('hidden', curStep===1)
+  const next=document.getElementById('nextBtn')
+  if(curStep===8){next.classList.add('hidden')} else {next.classList.remove('hidden'); next.innerHTML = curStep===5 ? 'Pay ₹2,000 & Continue <i class="ri-lock-2-line"></i>' : 'Continue <i class="ri-arrow-right-line"></i>'}
+  if(curStep===6){document.getElementById('yaanId').textContent='KLM-'+Math.floor(1000+Math.random()*9000)}
+}
+function nextStep(){
+  // simple validation for first steps
+  const active=document.querySelector(`.reg-step[data-step="${curStep}"]`)
+  const req=active.querySelectorAll('[required]')
+  for(let r of req){ if(!r.value || (r.type==='checkbox' && !r.checked)){ r.reportValidity && r.reportValidity(); r; return } }
+  if(curStep<8){curStep++;updateSteps()}
+}
+function prevStep(){ if(curStep>1){curStep--;updateSteps()} }
+// Magnetic buttons tiny effect
+document.querySelectorAll('.magnetic').forEach(btn=>{
+  btn.addEventListener('mousemove',e=>{
+    const r=btn.getBoundingClientRect()
+    const x=e.clientX - r.left - r.width/2, y=e.clientY - r.top - r.height/2
+    btn.style.transform=`translate(${x*0.12}px, ${y*0.18}px)`
+  })
+  btn.addEventListener('mouseleave',()=>btn.style.transform='')
+})
+// Smooth anchor offset for sticky nav
+document.querySelectorAll('a[href^="#"]').forEach(a=>{
+  a.addEventListener('click',e=>{
+    const id=a.getAttribute('href')
+    if(id.length>1){
+      const target=document.querySelector(id)
+      if(target){ e.preventDefault(); target.scrollIntoView({behavior:'smooth', block:'start'}); document.getElementById('mobileMenu').classList.add('hidden')}
+    }
+  })
+})
+// Escape to close modals
+window.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){closeVideo();closeLightbox();closeRegister()}
+})
+</script>
+</body>
+</html>
