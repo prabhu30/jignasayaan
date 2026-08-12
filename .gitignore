@@ -79,3 +79,10 @@ ENV/
 Thumbs.db
 Ehthumbs.db
 Desktop.ini
+
+# Background source images — only backgrounds/web/ (optimized, ~1.9MB) is used by the site
+backgrounds/*.jpg
+
+# Local reference capture of youngintach.org, kept for type/design comparison only
+YoungIntachExplorer.html
+YoungIntachExplorer_files/
