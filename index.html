@@ -75,24 +75,30 @@ h1,h2,h3,h4{font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spa
 .tex{position:relative;isolation:isolate}
 .tex::before{
   content:'';position:absolute;top:0;bottom:0;left:50%;width:100vw;margin-left:-50vw;z-index:-1;
-  background:var(--tex) center bottom/cover no-repeat;
-  opacity:var(--tex-o,0.30);pointer-events:none;
+  background-image:var(--tex);background-repeat:no-repeat;background-position:center;
+  /* Full width, so neither side of the ornate frame is ever cropped, and the layer fills
+     the section exactly, so there is no fill colour and therefore no visible seam. The
+     sources are 3454x1915 (1.804); the further a section's own ratio sits from that, the
+     more the artwork stretches vertically. */
+  background-size:100% 100%;
+  opacity:var(--tex-o,1);pointer-events:none;
 }
-.tex-dark::before{opacity:var(--tex-o,0.14)}
-.tex-soft::before{opacity:var(--tex-o,0.18)}
-@media(max-width:768px){.tex::before{opacity:calc(var(--tex-o,0.30) * 0.7)}}
-.tex-temple-green{--tex:url('backgrounds/web/temple-green.jpg')}
-.tex-temple-orange{--tex:url('backgrounds/web/temple-orange.jpg')}
-.tex-ships-teal{--tex:url('backgrounds/web/ships-teal.jpg')}
-.tex-folk-orange{--tex:url('backgrounds/web/folk-orange.jpg')}
-.tex-folk-green{--tex:url('backgrounds/web/folk-green.jpg')}
-.tex-folk-green-alt{--tex:url('backgrounds/web/folk-green-alt.jpg')}
-.tex-portraits-teal{--tex:url('backgrounds/web/portraits-teal.jpg')}
-.tex-procession-teal{--tex:url('backgrounds/web/procession-teal.jpg')}
-.tex-deities-teal{--tex:url('backgrounds/web/deities-teal.jpg')}
-.tex-deities-pink{--tex:url('backgrounds/web/deities-pink.jpg')}
-.tex-dance-pink{--tex:url('backgrounds/web/dance-pink.jpg')}
-.tex-dance-orange{--tex:url('backgrounds/web/dance-orange.jpg')}
+/* Dark sections keep white body copy, so the pale artwork stays held back behind it */
+.tex-dark::before{opacity:var(--tex-o,0.22)}
+/* Narrow viewports sit nowhere near 1.804, where stretching would be obvious — crop there */
+@media(max-width:1023px){.tex::before{background-size:cover;background-position:center bottom}}
+.tex-temple-green{--tex:url('backgrounds/web/temple-green.webp')}
+.tex-temple-orange{--tex:url('backgrounds/web/temple-orange.webp')}
+.tex-ships-teal{--tex:url('backgrounds/web/ships-teal.webp')}
+.tex-folk-orange{--tex:url('backgrounds/web/folk-orange.webp')}
+.tex-folk-green{--tex:url('backgrounds/web/folk-green.webp')}
+.tex-folk-green-alt{--tex:url('backgrounds/web/folk-green-alt.webp')}
+.tex-portraits-teal{--tex:url('backgrounds/web/portraits-teal.webp')}
+.tex-procession-teal{--tex:url('backgrounds/web/procession-teal.webp')}
+.tex-deities-teal{--tex:url('backgrounds/web/deities-teal.webp')}
+.tex-deities-pink{--tex:url('backgrounds/web/deities-pink.webp')}
+.tex-dance-pink{--tex:url('backgrounds/web/dance-pink.webp')}
+.tex-dance-orange{--tex:url('backgrounds/web/dance-orange.webp')}
 </style>
 </head>
 <body class="antialiased selection:bg-emerald selection:text-white">
@@ -955,7 +961,7 @@ h1,h2,h3,h4{font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spa
 <!-- FINAL CTA -->
 <section id="register" class="relative overflow-hidden bg-midnight">
   <div class="absolute inset-0">
-    <img src="backgrounds/web/dance-orange.jpg" alt="" class="w-full h-full object-cover object-bottom opacity-30">
+    <img src="backgrounds/web/dance-orange.webp" alt="" class="w-full h-full object-cover object-bottom opacity-30">
     <div class="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/80 to-emerald/30"></div>
   </div>
   <div class="relative max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-14 md:py-20">
