@@ -41,8 +41,6 @@ target/
 *.so
 *.war
 *.ear
-full.html
-reference.html
 
 # ====================================================================
 # PYTHON SPECIFIC
@@ -81,8 +79,19 @@ Ehthumbs.db
 Desktop.ini
 
 # Background source images — only backgrounds/web/ (optimized, ~1.9MB) is used by the site
-backgrounds/*.jpg
+public/backgrounds/*.jpg
 
-# Local reference capture of youngintach.org, kept for type/design comparison only
-YoungIntachExplorer.html
-YoungIntachExplorer_files/
+# Design/source material kept locally for comparison only (full.html, reference.html,
+# and the youngintach.org capture). Not part of the site build.
+/reference/*
+
+# ...except the original hand-written page. The Next port is verified pixel-for-pixel
+# against it, and its final state (nav typography, scroll offsets) was never committed,
+# so it stays in version control as the regression baseline.
+!/reference/original-index.html
+
+# Next.js
+/.next/
+/out/
+next-env.d.ts
+*.tsbuildinfo

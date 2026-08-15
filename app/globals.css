@@ -1,0 +1,98 @@
+/* ------------------------------------------------------------------
+   Cascade order is load-bearing and is NOT the Tailwind convention.
+
+   In the original index.html the Tailwind Play CDN injected its stylesheet
+   (preflight + utilities) into <head> at runtime, which placed it AFTER this
+   hand-written <style> block. Utilities therefore beat these rules on equal
+   specificity — e.g. .glass sets `border: 1px solid rgba(255,255,255,.3)` but
+   the navbar's `border-black/[0.06]` overrides the colour on all four sides.
+
+   Keeping this CSS above the @tailwind directives reproduces that exact order.
+   Moving it below (the usual layout) silently changes borders and headings.
+   Verified against the live page before the port — see reference/original-index.html.
+   ------------------------------------------------------------------ */
+/* Self-hosted display faces (fonts/) — Roboto + Roboto Condensed come from Google Fonts */
+@font-face{font-family:'Gotham';src:url('/fonts/Gotham-Bold.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+@font-face{font-family:'Gotham';src:url('/fonts/Gotham-Black.woff') format('woff');font-weight:900;font-style:normal;font-display:swap}
+@font-face{font-family:'DK Brush Crush';src:url('/fonts/DKBrushCrush.woff') format('woff');font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:'brushield';src:url('/fonts/brushield.woff') format('woff');font-weight:700;font-style:normal;font-display:swap}
+*{scroll-behavior:smooth}
+/* Keeps anchored sections clear of the sticky nav (heights match its h-20/md:h-24/lg:h-28) */
+section[id]{scroll-margin-top:80px}
+@media(min-width:768px){section[id]{scroll-margin-top:96px}}
+@media(min-width:1024px){section[id]{scroll-margin-top:112px}}
+/* Nav-link typography lifted directly from youngintach.org's .navbar-nav .nav-link /
+   .nav-item.more .nav-link rules, so weight/size/tracking match exactly */
+.yi-nav-link{font-family:'Roboto Condensed',sans-serif;font-weight:400;font-size:20px;line-height:24px;letter-spacing:0.7px}
+.yi-more-link{font-family:'Roboto Condensed',sans-serif;font-weight:700;font-size:16px;letter-spacing:0;text-transform:uppercase}
+/* Size, weight, family and tracking already matched youngintach.org exactly (verified
+   against the live site: identical 20px/400/24px/0.7px and identical glyph advances).
+   What differed was rasterisation: <body class="antialiased"> applies grayscale
+   smoothing, which thins strokes on macOS, so these links read lighter and looser than
+   the originals. youngintach.org uses the browser default, so restore it here.
+   Scoped to these two classes deliberately — the rest of the page keeps `antialiased`
+   as the original index.html had it. */
+.yi-nav-link,.yi-more-link{-webkit-font-smoothing:auto;-moz-osx-font-smoothing:auto}
+body{font-family:'Roboto Condensed',sans-serif;background:#FAFAF7;color:#111111;overflow-x:hidden}
+h1,h2,h3,h4{font-family:'Roboto Condensed',sans-serif;font-weight:700;letter-spacing:-0.005em}
+/* DK Brush Crush ships a single upright weight, so suppress the synthetic italic/bold
+   the existing accent spans would otherwise trigger. Its cap height is 0.836em against
+   Roboto Condensed's 0.711em, so accents that inherit a heading's size are scaled down
+   to sit level with it — skipped when the span sets its own size (e.g. the hero). */
+.font-brush{font-weight:400!important;letter-spacing:0.01em}
+.font-brush.italic{font-style:normal}
+.font-brush:not([class*="text-["]){font-size:0.88em;line-height:1.1}
+::selection{background:#0F8B6F;color:white}
+.glass{backdrop-filter:blur(18px) saturate(180%);-webkit-backdrop-filter:blur(18px) saturate(180%);background:rgba(255,255,255,0.78);border:1px solid rgba(255,255,255,0.3)}
+.glass-dark{backdrop-filter:blur(20px) saturate(160%);-webkit-backdrop-filter:blur(20px) saturate(160%);background:rgba(8,27,51,0.72);border:1px solid rgba(255,255,255,0.08)}
+.marquee{white-space:nowrap;animation:marquee 22s linear infinite}
+@keyframes marquee{0%{transform:translateX(0)}100%{transform:translateX(-50%)}}
+.reveal{opacity:0;transform:translateY(24px);transition:all .8s cubic-bezier(.16,1,.3,1)}
+.reveal.in{opacity:1;transform:translateY(0)}
+.parallax-img{will-change:transform}
+.shimmer{position:relative;overflow:hidden}
+.shimmer::after{content:'';position:absolute;inset:0;transform:translateX(-100%);background:linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);animation:shimmer 2.8s infinite}
+@keyframes shimmer{100%{transform:translateX(100%)}}
+.train-track{height:100%;width:2px;background:linear-gradient(to bottom, #0F8B6F, #F28C28, #081B33);opacity:0.18;position:absolute;left:50%;transform:translateX(-50%)}
+@media(max-width:768px){.train-track{left:20px}}
+.magnetic{transition:transform .25s cubic-bezier(.16,1,.3,1)}
+.custom-scrollbar::-webkit-scrollbar{height:4px;width:4px}
+.custom-scrollbar::-webkit-scrollbar-thumb{background:#0F8B6F;border-radius:999px}
+.masonry{column-count:3;column-gap:1rem}
+@media(max-width:1024px){.masonry{column-count:2}}
+@media(max-width:640px){.masonry{column-count:1}}
+.no-scrollbar::-webkit-scrollbar{display:none}
+.no-scrollbar{scrollbar-width:none}
+
+/* Heritage section backgrounds — full-bleed texture behind section content */
+.tex{position:relative;isolation:isolate}
+.tex::before{
+  content:'';position:absolute;top:0;bottom:0;left:50%;width:100vw;margin-left:-50vw;z-index:-1;
+  background-image:var(--tex);background-repeat:no-repeat;background-position:center;
+  /* Full width, so neither side of the ornate frame is ever cropped, and the layer fills
+     the section exactly, so there is no fill colour and therefore no visible seam. The
+     sources are 3454x1915 (1.804); the further a section's own ratio sits from that, the
+     more the artwork stretches vertically. */
+  background-size:100% 100%;
+  opacity:var(--tex-o,1);pointer-events:none;
+}
+/* Dark sections keep white body copy, so the pale artwork stays held back behind it */
+.tex-dark::before{opacity:var(--tex-o,0.22)}
+/* Narrow viewports sit nowhere near 1.804, where stretching would be obvious — crop there */
+@media(max-width:1023px){.tex::before{background-size:cover;background-position:center bottom}}
+.tex-temple-green{--tex:url('/backgrounds/web/temple-green.webp')}
+.tex-temple-orange{--tex:url('/backgrounds/web/temple-orange.webp')}
+.tex-ships-teal{--tex:url('/backgrounds/web/ships-teal.webp')}
+.tex-folk-orange{--tex:url('/backgrounds/web/folk-orange.webp')}
+.tex-folk-green{--tex:url('/backgrounds/web/folk-green.webp')}
+.tex-folk-green-alt{--tex:url('/backgrounds/web/folk-green-alt.webp')}
+.tex-portraits-teal{--tex:url('/backgrounds/web/portraits-teal.webp')}
+.tex-procession-teal{--tex:url('/backgrounds/web/procession-teal.webp')}
+.tex-deities-teal{--tex:url('/backgrounds/web/deities-teal.webp')}
+.tex-deities-pink{--tex:url('/backgrounds/web/deities-pink.webp')}
+.tex-dance-pink{--tex:url('/backgrounds/web/dance-pink.webp')}
+.tex-dance-orange{--tex:url('/backgrounds/web/dance-orange.webp')}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
