@@ -1,0 +1,25 @@
+# Netlify configuration.
+#
+# This repo used to be a static index.html served straight from the repo root, so the
+# old site settings were "no build command, publish = /". Next.js needs a build step,
+# and its output is not a plain folder of HTML, so both of those have to change.
+#
+# Settings here override the Netlify UI, so the UI fields can be left alone once this
+# file is committed — the deploy is reproducible from the repo instead of dashboard state.
+
+[build]
+  command = "npm run build"
+  # The Next.js Runtime reads the build output from .next and wires up the routes.
+  publish = ".next"
+
+[build.environment]
+  # Next 15 / React 19 need Node >= 18.18; pin to 20 so Netlify does not pick an older
+  # default and fail on syntax the build relies on.
+  NODE_VERSION = "20"
+
+# Serves the Next.js build: static pages from the CDN, and — once payment lands — API
+# routes, server actions and webhooks as functions. Netlify usually auto-installs this
+# for Next sites; declaring it makes the deploy deterministic rather than dependent on
+# framework detection.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
