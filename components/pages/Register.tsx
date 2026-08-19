@@ -1,4 +1,5 @@
-import { Section, Eyebrow, Title, Lede, Body, Callout } from '@/components/page/Blocks'
+import { Section, Eyebrow, Title, Body, Callout } from '@/components/page/Blocks'
+import RegistrationForm from '@/components/register/RegistrationForm'
 
 const STEPS = [
   ['REGISTER', 'Submit your basic details through the registration form.'],
@@ -7,13 +8,6 @@ const STEPS = [
   ['ENROLLMENT', 'Complete the required forms, documentation and participation formalities.'],
   ['YAANIK CONFIRMATION', 'Receive your confirmed YAANIK enrollment and journey information.'],
 ]
-
-const FIELDS = [
-  'Name', 'Date of Birth', 'Participant Category', 'College / Institution / Organization',
-  'Department / Profession / Designation', 'Email ID', 'Phone Number', 'City', 'State',
-]
-
-const INTERESTS = ['Knowledge Exchange', 'Culture', 'Heritage', 'Arts Experience', 'Entrepreneurship', 'Creative Leadership', 'Innovation', 'Life Skills']
 
 export default function Register() {
   return (
@@ -25,6 +19,12 @@ export default function Register() {
             <Eyebrow>BECOME A YAANIK</Eyebrow>
             <Title className="text-midnight">Five steps <span className="font-light italic font-brush text-emerald">to board.</span></Title>
             <Body className="text-black/60">Participation in Jignasa Yaan follows a structured registration and confirmation process.</Body>
+            <a
+              href="#registration-form"
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-midnight px-7 py-3.5 text-sm font-bold text-white transition hover:bg-emerald"
+            >
+              Register Now <i className="ri-arrow-down-line"></i>
+            </a>
           </div>
 
           <ol className="relative">
@@ -45,40 +45,19 @@ export default function Register() {
         </div>
       </Section>
 
-      {/* Form spec — shown as a spec sheet, not a live form */}
-      <Section tone="soft" bordered>
-        <div className="grid lg:grid-cols-2 gap-10">
-          <div>
-            <Eyebrow>REGISTRATION FORM</Eyebrow>
-            <Title className="text-midnight">What we will <span className="font-light italic font-brush text-emerald">ask you.</span></Title>
-            <div className="mt-8 grid sm:grid-cols-2 gap-3">
-              {FIELDS.map(f => (
-                <div key={f} className="bg-white rounded-xl border border-black/5 px-4 py-3.5 text-[15px] text-charcoal/75 flex items-center gap-3">
-                  <i className="ri-checkbox-blank-circle-line text-emerald text-xs"></i> {f}
-                </div>
-              ))}
-            </div>
-            <p className="mt-4 text-xs text-black/45">Participant Category: Student / Youth / Corporate Professional / Young Entrepreneur / Doctor</p>
-          </div>
+      {/* Step 1, made actionable — the live form rather than a description of one */}
+      <Section tone="soft" bordered id="registration-form">
+        <div className="max-w-[820px]">
+          <Eyebrow>REGISTRATION FORM</Eyebrow>
+          <Title className="text-midnight">Tell us <span className="font-light italic font-brush text-emerald">who you are.</span></Title>
+          <Body className="text-black/60">
+            Ten details are all it takes to start. Everything marked below is needed for us to reach you about selection
+            and enrollment.
+          </Body>
+        </div>
 
-          <div>
-            <div className="bg-midnight text-white rounded-[28px] p-8 h-full">
-              <div className="text-[11px] tracking-[0.18em] font-bold text-golden">AREAS OF INTEREST</div>
-              <h3 className="font-head font-extrabold text-2xl mt-3">Tell us what pulls you.</h3>
-              <div className="mt-6 flex flex-wrap gap-2.5">
-                {INTERESTS.map(t => (
-                  <span key={t} className="px-4 py-2 rounded-full text-sm font-semibold bg-white/10 border border-white/10">{t}</span>
-                ))}
-              </div>
-              <div className="mt-8 pt-6 border-t border-white/10">
-                <div className="text-[11px] tracking-[0.18em] font-bold text-white/50">ACKNOWLEDGEMENT</div>
-                <p className="text-white/75 leading-relaxed mt-3 text-[15px]">
-                  You have successfully registered for Jignasa Yaan. Thank you for your enthusiasm. You shall receive further
-                  communication regarding selection and enrollment through your registered phone number and email.
-                </p>
-              </div>
-            </div>
-          </div>
+        <div className="mt-10 max-w-[980px]">
+          <RegistrationForm />
         </div>
       </Section>
 
@@ -86,7 +65,7 @@ export default function Register() {
         <Callout tone="saffron">
           <div className="md:flex items-center justify-between gap-8">
             <h3 className="font-head font-extrabold text-[28px] md:text-[38px] leading-tight">Your journey begins here.</h3>
-            <a href="/#register" className="mt-6 md:mt-0 shrink-0 inline-flex items-center gap-2 bg-white text-saffron px-8 py-4 rounded-full font-bold hover:bg-ivory transition">
+            <a href="#registration-form" className="mt-6 md:mt-0 shrink-0 inline-flex items-center gap-2 bg-white text-saffron px-8 py-4 rounded-full font-bold hover:bg-ivory transition">
               Register Now <i className="ri-arrow-right-line"></i>
             </a>
           </div>

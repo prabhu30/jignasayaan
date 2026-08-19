@@ -1,4 +1,4 @@
-import { Section, Eyebrow, Title, Body } from '@/components/page/Blocks'
+import { Section, Eyebrow, Title } from '@/components/page/Blocks'
 
 const FEATURES = [
   ['EDUCATION ON WHEELS', 'The journey itself becomes an educational environment.', 'ri-train-line'],

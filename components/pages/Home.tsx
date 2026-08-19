@@ -17,10 +17,10 @@ export default function Home() {
             <div className="text-[11px] tracking-widest font-semibold text-black/45 mt-4">THEME</div>
             <div className="font-head font-extrabold text-2xl text-midnight mt-1">South for Bharat</div>
           </div>
-          <div className="bg-midnight text-white rounded-2xl p-7">
-            <div className="w-11 h-11 rounded-xl bg-white/10 flex items-center justify-center text-xl"><i className="ri-leaf-line"></i></div>
-            <div className="text-[11px] tracking-widest font-semibold text-white/50 mt-4">TAGLINE</div>
-            <div className="font-head font-extrabold text-2xl mt-1">This Time for Keralam</div>
+          <div className="bg-white rounded-2xl p-7 border border-black/5 shadow-[0_18px_50px_rgba(8,27,51,0.10)]">
+            <div className="w-11 h-11 rounded-xl bg-saffron/10 text-saffron flex items-center justify-center text-xl"><i className="ri-leaf-line"></i></div>
+            <div className="text-[11px] tracking-widest font-semibold text-black/45 mt-4">TAGLINE</div>
+            <div className="font-head font-extrabold text-2xl text-midnight mt-1">This Time for Keralam</div>
           </div>
         </div>
       </Section>
@@ -47,20 +47,20 @@ export default function Home() {
       </Section>
 
       {/* The transformation, as a ledger of shifts */}
-      <Section tone="midnight">
+      <Section tone="paper">
         <div className="max-w-[820px]">
-          <Eyebrow tone="golden">NOT MERELY A JOURNEY</Eyebrow>
-          <Title>
-            This is a journey from knowledge to <span className="font-light italic font-brush text-golden">wisdom</span>, in the lap of societal exposure.
+          <Eyebrow>NOT MERELY A JOURNEY</Eyebrow>
+          <Title className="text-midnight">
+            This is a journey from knowledge to <span className="font-light italic font-brush text-emerald">wisdom</span>, in the lap of societal exposure.
           </Title>
         </div>
         <div className="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
           {SHIFTS.map(([from, to]) => (
-            <div key={from} className="bg-white/5 border border-white/10 rounded-2xl p-6">
-              <div className="text-white/45 text-sm line-through decoration-white/25">{from}</div>
+            <div key={from} className="bg-[#F5F7FA] border border-black/5 rounded-2xl p-6">
+              <div className="text-black/40 text-sm line-through decoration-black/20">{from}</div>
               <div className="flex items-center gap-2 mt-3">
-                <i className="ri-arrow-down-line text-golden"></i>
-                <span className="font-head font-extrabold text-xl">{to}</span>
+                <i className="ri-arrow-down-line text-emerald"></i>
+                <span className="font-head font-extrabold text-xl text-midnight">{to}</span>
               </div>
             </div>
           ))}

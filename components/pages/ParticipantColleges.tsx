@@ -42,9 +42,10 @@ export default function ParticipantColleges() {
           </div>
         </div>
 
-        <Body className="text-black/60 max-w-[760px]">
-          The Yaanik community has represented diverse colleges and institutions, bringing together participants from different
-          academic backgrounds, cultures and regions.
+        <Body className="text-black/60 max-w-[820px]">
+          Jignasa Yaan has brought together students from colleges across South India in its previous Yaan editions. The
+          Yaanik community has represented diverse colleges and institutions, bringing together participants from different
+          academic backgrounds, cultures and regions as part of the Jignasa Yaan journey.
         </Body>
 
         <div className="mt-10 grid lg:grid-cols-3 gap-6 items-start">
@@ -64,10 +65,10 @@ export default function ParticipantColleges() {
         </div>
       </Section>
 
-      <section className="bg-midnight text-white">
+      <section className="bg-white/95 backdrop-blur-sm text-charcoal">
         <div className="max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16 py-16 md:py-24 text-center">
-          <h2 className="font-head font-extrabold text-[30px] md:text-[56px] leading-[1.02] tracking-[-0.02em]">
-            Many colleges. Many cultures. <span className="font-light italic font-brush text-golden">One Yaan.</span>
+          <h2 className="font-head font-extrabold text-[30px] md:text-[56px] leading-[1.02] tracking-[-0.02em] text-midnight">
+            Many colleges. Many cultures. <span className="font-light italic font-brush text-emerald">One Yaan.</span>
           </h2>
         </div>
       </section>

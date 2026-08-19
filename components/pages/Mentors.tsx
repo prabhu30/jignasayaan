@@ -22,19 +22,20 @@ export default function Mentors() {
           <Eyebrow>MEET THE PEOPLE WHO INSPIRE</Eyebrow>
           <Title className="text-midnight">A major part of the Yaan is <span className="font-light italic font-brush text-emerald">who you meet.</span></Title>
           <Body className="text-black/60">
-            Interaction with people who have knowledge, experience and stories to share.
+            A major part of the Jignasa Yaan experience is interaction with people who have knowledge, experience and
+            stories to share.
           </Body>
         </div>
 
         <div className="mt-12 space-y-3">
           {CATEGORIES.map(([title, text, icon], i) => (
-            <div key={title} className={`rounded-[24px] p-7 md:p-9 grid md:grid-cols-[auto_1fr] gap-6 md:gap-9 items-center ${i % 2 ? 'bg-midnight text-white' : 'bg-[#F5F7FA] border border-black/5'}`}>
-              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0 ${i % 2 ? 'bg-white/10 text-golden' : 'bg-white text-emerald border border-black/5'}`}>
+            <div key={title} className={`rounded-[24px] p-7 md:p-9 grid md:grid-cols-[auto_1fr] gap-6 md:gap-9 items-center ${i % 2 ? 'bg-white border border-black/5 shadow-[0_18px_50px_rgba(8,27,51,0.10)]' : 'bg-[#F5F7FA] border border-black/5'}`}>
+              <div className={`w-16 h-16 rounded-2xl flex items-center justify-center text-3xl shrink-0 ${i % 2 ? 'bg-emerald/10 text-emerald' : 'bg-white text-emerald border border-black/5'}`}>
                 <i className={icon}></i>
               </div>
               <div>
-                <h3 className={`font-head font-extrabold text-[20px] md:text-[26px] ${i % 2 ? '' : 'text-midnight'}`}>{title}</h3>
-                <p className={`text-[15px] md:text-base leading-relaxed mt-2 max-w-[820px] ${i % 2 ? 'text-white/70' : 'text-black/60'}`}>{text}</p>
+                <h3 className="font-head font-extrabold text-[20px] md:text-[26px] text-midnight">{title}</h3>
+                <p className="text-[15px] md:text-base leading-relaxed mt-2 max-w-[820px] text-black/60">{text}</p>
 
                 {i === 0 && (
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -55,7 +56,7 @@ export default function Mentors() {
           ))}
         </div>
         <p className="mt-6 text-xs text-black/45 max-w-[820px]">
-          Historical YAAN interactions included professionals associated with these organisations.
+          Historical YAAN interactions included professionals associated with organisations such as these.
         </p>
       </Section>
     </>

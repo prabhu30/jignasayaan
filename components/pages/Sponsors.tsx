@@ -3,13 +3,13 @@ import { Section, Eyebrow, Title, Body, Callout } from '@/components/page/Blocks
 const ORGS: [string, string][] = [
   ['Indian National Trust for Art and Cultural Heritage', 'INTACH'],
   ['Ministry of Culture, Government of India', ''],
-  ['United Nations Youth / Division for Social Policy and Development', 'UN DSPD'],
+  ['United Nations Youth / Division for Social Policy and Development', ''],
   ['Department of Culture, Government of Kerala', ''],
   ['Department of Tourism, Government of Kerala', ''],
   ['Indian Institute of Space Science and Technology', 'IIST'],
   ['Indian Institute of Technology Madras', 'IIT-M'],
   ['Indian Institute of Technology — Banaras Hindu University', 'IIT-BHU'],
-  ['Birla Institute of Technology & Science, Pilani', 'BITS'],
+  ['Birla Institute of Technology & Science — BITS Pilani', 'BITS'],
   ['Indian Institute of Management Ahmedabad', 'IIM-A'],
   ['Indian Railway Catering and Tourism Corporation', 'IRCTC'],
   ['Dhagam', ''],
@@ -48,13 +48,13 @@ export default function Sponsors() {
         <Callout>
           <div className="md:flex items-center justify-between gap-8">
             <div className="max-w-[680px]">
-              <div className="text-[11px] tracking-[0.18em] font-bold text-golden">PARTNERSHIP</div>
-              <h3 className="font-head font-extrabold text-[26px] md:text-[34px] leading-tight mt-3">
+              <div className="text-[11px] tracking-[0.18em] font-bold text-emerald">PARTNERSHIP</div>
+              <h3 className="font-head font-extrabold text-[26px] md:text-[34px] leading-tight text-midnight mt-3">
                 JIGNASA welcomes organisations that believe in education, youth development, culture, heritage, arts,
                 leadership, innovation and social responsibility.
               </h3>
             </div>
-            <a href="/contact-us" className="mt-6 md:mt-0 shrink-0 inline-flex items-center gap-2 bg-white text-midnight px-8 py-4 rounded-full font-bold hover:bg-ivory transition">
+            <a href="/contact-us" className="mt-6 md:mt-0 shrink-0 inline-flex items-center gap-2 bg-midnight text-white px-8 py-4 rounded-full font-bold hover:bg-emerald transition">
               Partner with Jignasa <i className="ri-arrow-right-line"></i>
             </a>
           </div>

@@ -6,24 +6,30 @@ import type { SitePage } from '@/lib/pages'
 
 const WRAP = 'max-w-[1440px] mx-auto px-6 md:px-12 lg:px-16'
 
-type Tone = 'ivory' | 'white' | 'soft' | 'midnight' | 'emerald'
+type Tone = 'ivory' | 'white' | 'soft' | 'paper' | 'emerald'
 
 /* The artwork is the page background (see the fixed layer in app/[slug]/page.tsx),
    so section surfaces are translucent rather than opaque — content sits on the
-   artwork instead of covering it. `ivory` is fully clear. */
+   artwork instead of covering it. `ivory` is fully clear.
+
+   The four surfaces are a single opacity ramp — transparent, 62%, 80%, 95% — so the
+   emphasis band (`paper`) reads as emphasis by being the one that nearly covers the
+   artwork, rather than by inverting to dark. */
 const TONE: Record<Tone, string> = {
   ivory: 'bg-transparent text-charcoal',
   white: 'bg-white/80 backdrop-blur-[3px] text-charcoal',
   soft: 'bg-white/62 backdrop-blur-[3px] text-charcoal',
-  midnight: 'bg-midnight/90 backdrop-blur-sm text-white',
-  emerald: 'bg-emerald/92 text-white',
+  paper: 'bg-white/95 backdrop-blur-sm text-charcoal',
+  emerald: 'bg-emerald/[0.92] text-white',
 }
 
+/* `id` makes the section an anchor target. globals.css gives every `section[id]` a
+   scroll-margin matching the sticky nav's height, so linking to one clears the bar. */
 export function Section({
-  tone = 'ivory', children, className = '', bordered = false,
-}: { tone?: Tone; children: ReactNode; className?: string; bordered?: boolean }) {
+  tone = 'ivory', children, className = '', bordered = false, id,
+}: { tone?: Tone; children: ReactNode; className?: string; bordered?: boolean; id?: string }) {
   return (
-    <section className={`${TONE[tone]} ${bordered ? 'border-y border-black/10' : ''} ${className}`}>
+    <section id={id} className={`${TONE[tone]} ${bordered ? 'border-y border-black/10' : ''} ${className}`}>
       <div className={`${WRAP} py-14 md:py-20`}>{children}</div>
     </section>
   )
@@ -84,12 +90,12 @@ export function PageHero({ page, kicker }: { page: SitePage; kicker?: string }) 
       <header className="relative">
         <div className={`${WRAP} pt-16 pb-10 md:pt-24 md:pb-14`}>
           <div className="grid lg:grid-cols-2">
-            <div className="bg-midnight/90 backdrop-blur-sm text-white rounded-[28px] px-7 py-10 md:px-12 md:py-14 shadow-[0_20px_60px_rgba(8,27,51,0.28)]">
-              {kicker && <Eyebrow tone="golden">{kicker}</Eyebrow>}
-              <h1 className="font-head font-extrabold text-[32px] md:text-[52px] leading-[0.95] tracking-[-0.02em] mt-4">
+            <div className="bg-white/[0.92] backdrop-blur-sm text-charcoal rounded-[28px] px-7 py-10 md:px-12 md:py-14 border border-white/70 shadow-[0_20px_60px_rgba(8,27,51,0.16)]">
+              {kicker && <Eyebrow>{kicker}</Eyebrow>}
+              <h1 className="font-head font-extrabold text-[32px] md:text-[52px] leading-[0.95] tracking-[-0.02em] text-midnight mt-4">
                 {page.label}
               </h1>
-              {page.tagline && <p className="mt-4 text-[16px] md:text-[18px] leading-relaxed text-white/75">{page.tagline}</p>}
+              {page.tagline && <p className="mt-4 text-[16px] md:text-[18px] leading-relaxed text-charcoal/70">{page.tagline}</p>}
             </div>
           </div>
         </div>
@@ -138,11 +144,19 @@ export function Chip({ children, tone = 'light' }: { children: ReactNode; tone?:
   return <span className={`px-4 py-2 rounded-full text-sm font-semibold border ${c}`}>{children}</span>
 }
 
-export function Callout({ children, tone = 'midnight' }: { children: ReactNode; tone?: 'midnight' | 'emerald' | 'saffron' }) {
-  const c = tone === 'emerald' ? 'bg-emerald text-white' : tone === 'saffron' ? 'bg-saffron text-white' : 'bg-midnight text-white'
+/* `paper` is the default: the callout is the biggest panel on the page it sits in, and
+   dominant panels read white. `emerald`/`saffron` stay filled — they are brand colour,
+   not darkness, and are used where the callout is a call to action. */
+export function Callout({ children, tone = 'paper' }: { children: ReactNode; tone?: 'paper' | 'emerald' | 'saffron' }) {
+  const filled = tone === 'emerald' || tone === 'saffron'
+  const c = tone === 'emerald'
+    ? 'bg-emerald text-white'
+    : tone === 'saffron'
+      ? 'bg-saffron text-white'
+      : 'bg-white text-charcoal border border-black/5 shadow-[0_18px_50px_rgba(8,27,51,0.10)]'
   return (
     <div className={`${c} rounded-[28px] p-7 md:p-10 relative overflow-hidden`}>
-      <div className="absolute -right-12 -top-12 w-64 h-64 bg-white/10 rounded-full blur-3xl"></div>
+      <div className={`absolute -right-12 -top-12 w-64 h-64 rounded-full blur-3xl ${filled ? 'bg-white/10' : 'bg-emerald/[0.07]'}`}></div>
       <div className="relative">{children}</div>
     </div>
   )

@@ -55,18 +55,20 @@ export default function Navbar() {
             <button id="moreBtn" onClick={() => setMoreOpen(o => !o)} className="yi-more-link flex items-center gap-2 text-midnight hover:text-emerald transition" aria-haspopup="true" aria-expanded={moreOpen}>
               <i className="ri-menu-line text-lg"></i> MORE
             </button>
-            <div id="morePanel" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMoreOpen(false) }} className={(moreOpen ? '' : 'hidden ') + 'absolute right-0 top-[calc(100%+22px)] w-[92vw] max-w-[760px] bg-white rounded-2xl border border-black/5 shadow-2xl p-7 grid sm:grid-cols-3 gap-8'}>
+            <div id="morePanel" onClick={(e) => { if ((e.target as HTMLElement).closest('a')) setMoreOpen(false) }} className={(moreOpen ? '' : 'hidden ') + 'absolute right-0 top-[calc(100%+22px)] w-[92vw] max-w-[960px] bg-white rounded-2xl border border-black/5 shadow-2xl p-7 grid sm:grid-cols-2 lg:grid-cols-4 gap-8'}>
+              <div>
+                <h5 className="text-xs font-extrabold tracking-widest text-[#0098b2]">THE RECORD</h5>
+                <ul className="mt-3 space-y-2.5 text-sm">
+                  <li><Link href="/the-jignasa-yaan-legacy" className="hover:text-emerald transition">The Jignasa Yaan Legacy</Link></li>
+                  <li><Link href="/history-of-jignasa-yaan" className="hover:text-emerald transition">History of Jignasa Yaan</Link></li>
+                  <li><Link href="/hall-of-fame" className="hover:text-emerald transition">Hall of Fame</Link></li>
+                </ul>
+              </div>
               <div>
                 <h5 className="text-xs font-extrabold tracking-widest text-[#ae3432]">YAAN DETAILS</h5>
                 <ul className="mt-3 space-y-2.5 text-sm">
                   <li><Link href="/events-on-train" className="hover:text-emerald transition">Events on Train</Link></li>
-                  <li><Link href="/events-off-train-at-iist-campus" className="hover:text-emerald transition">Events off Train — @ IIST Campus</Link></li>
-                  <li><Link href="/participation-in-dhanak-15" className="hover:text-emerald transition">Participation in Dhanak 15</Link></li>
-                  <li><Link href="/intach-heritage-rally" className="hover:text-emerald transition">INTACH Heritage Rally</Link></li>
-                  <li><Link href="/case-study-anantha-padmanabha-swamy-temple" className="hover:text-emerald transition">Case Study: Anantha Padmanabha Swamy Temple</Link></li>
-                  <li><Link href="/crafting-kerala" className="hover:text-emerald transition">Crafting Kerala</Link></li>
-                  <li><Link href="/ecology-at-gods-own-country" className="hover:text-emerald transition">Ecology @ God's Own Country</Link></li>
-                  <li><Link href="/kathakali-festival" className="hover:text-emerald transition">Kathakali Festival</Link></li>
+                  <li><Link href="/events-off-train" className="hover:text-emerald transition">Events off Train</Link></li>
                 </ul>
               </div>
               <div>
@@ -75,6 +77,7 @@ export default function Navbar() {
                   <li><Link href="/specific-features" className="hover:text-emerald transition">Specific Features</Link></li>
                   <li><Link href="/faqs" className="hover:text-emerald transition">FAQs</Link></li>
                   <li><Link href="/contact-us" className="hover:text-emerald transition">Contact Us</Link></li>
+                  <li><Link href="/come-back-different" className="hover:text-emerald transition">Come Back Different</Link></li>
                 </ul>
               </div>
               <div>
@@ -98,22 +101,26 @@ export default function Navbar() {
           <Link href="/register" className="block py-3 px-4 bg-[#F2F7E6] rounded-xl font-bold text-[#739f16]">Register</Link>
 
           <details className="bg-[#F5F7FA] rounded-xl">
+            <summary className="py-3 px-4 font-bold cursor-pointer list-none flex items-center justify-between text-[#0098b2]">The Record <i className="ri-arrow-down-s-line"></i></summary>
+            <div className="px-4 pb-3 space-y-1 text-black/70 font-medium">
+              <Link href="/the-jignasa-yaan-legacy" className="block py-2">The Jignasa Yaan Legacy</Link>{' '}
+              <Link href="/history-of-jignasa-yaan" className="block py-2">History of Jignasa Yaan</Link>{' '}
+              <Link href="/hall-of-fame" className="block py-2">Hall of Fame</Link>
+            </div>
+          </details>
+
+          <details className="bg-[#F5F7FA] rounded-xl">
             <summary className="py-3 px-4 font-bold cursor-pointer list-none flex items-center justify-between text-[#ae3432]">Yaan Details <i className="ri-arrow-down-s-line"></i></summary>
             <div className="px-4 pb-3 space-y-1 text-black/70 font-medium">
               <Link href="/events-on-train" className="block py-2">Events on Train</Link>{' '}
-              <Link href="/events-off-train-at-iist-campus" className="block py-2">Events off Train — @ IIST Campus</Link>{' '}
-              <Link href="/participation-in-dhanak-15" className="block py-2">Participation in Dhanak 15</Link>{' '}
-              <Link href="/intach-heritage-rally" className="block py-2">INTACH Heritage Rally</Link>{' '}
-              <Link href="/case-study-anantha-padmanabha-swamy-temple" className="block py-2">Case Study: Anantha Padmanabha Swamy Temple</Link>{' '}
-              <Link href="/crafting-kerala" className="block py-2">Crafting Kerala</Link>{' '}
-              <Link href="/ecology-at-gods-own-country" className="block py-2">Ecology @ God's Own Country</Link>{' '}
-              <Link href="/kathakali-festival" className="block py-2">Kathakali Festival</Link>
+              <Link href="/events-off-train" className="block py-2">Events off Train</Link>
             </div>
           </details>
 
           <Link href="/specific-features" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Specific Features</Link>{' '}
           <Link href="/contact-us" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Contact Us</Link>{' '}
           <Link href="/faqs" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">FAQs</Link>{' '}
+          <Link href="/come-back-different" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Come Back Different</Link>{' '}
           <Link href="/sponsors-and-associate-institutes" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Sponsors & Associate Institutes</Link>{' '}
           <Link href="/participant-colleges" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Participant Colleges</Link>{' '}
           <Link href="/mentors" className="block py-3 px-4 bg-[#F5F7FA] rounded-xl font-medium">Mentors</Link>

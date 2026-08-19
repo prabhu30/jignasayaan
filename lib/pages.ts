@@ -8,7 +8,7 @@
  * `background` is a file in public/backgrounds/web/. There are 12 artworks and 17 pages,
  * so some repeat; nothing else depends on these values, so reassign freely.
  */
-export type PageGroup = 'MAIN' | 'YAAN DETAILS' | 'PROGRAM' | 'COMMUNITY'
+export type PageGroup = 'MAIN' | 'THE RECORD' | 'YAAN DETAILS' | 'PROGRAM' | 'COMMUNITY'
 
 export type SitePage = {
   slug: string
@@ -40,15 +40,18 @@ export const NAV_PAGES: SitePage[] = [
 ]
 
 export const MORE_PAGES: SitePage[] = [
-  // YAAN DETAILS
+  // THE RECORD — what the Yaan has done. These were three sections of /about until they
+  // outgrew it; the content document treats each as its own headed block, so each is a page.
+  { slug: 'the-jignasa-yaan-legacy', label: 'The Jignasa Yaan Legacy', group: 'THE RECORD', background: 'temple-orange.webp', hero: 'band', tagline: 'Seven premier institutions, 2014 to 2026.' },
+  { slug: 'history-of-jignasa-yaan', label: 'History of Jignasa Yaan', group: 'THE RECORD', background: 'folk-green.webp', hero: 'split', tagline: 'Seven editions, six states, 1,692 Yaaniks.' },
+  { slug: 'hall-of-fame', label: 'Hall of Fame', group: 'THE RECORD', background: 'procession-teal.webp', hero: 'overlay', tagline: 'Twenty-seven things the Knowledge Journey has built.' },
+
+  // YAAN DETAILS — the content document splits the whole programme into exactly these
+  // two activity groups, so each one is a page and every activity is a point inside it.
+  // The individual off-train activities had a page each until the document was revised;
+  // they now live as expanded points on /events-off-train.
   { slug: 'events-on-train', label: 'Events on Train', group: 'YAAN DETAILS', background: 'ships-teal.webp', hero: 'split', tagline: 'The carriage becomes the classroom — teams, mentors and five activities in motion.' },
-  { slug: 'events-off-train-at-iist-campus', label: 'Events off Train — @ IIST Campus', group: 'YAAN DETAILS', background: 'temple-green.webp', hero: 'overlay', tagline: 'Eight days in Thiruvananthapuram, out in the field.' },
-  { slug: 'participation-in-dhanak-15', label: 'Participation in Dhanak 15', group: 'YAAN DETAILS', background: 'dance-orange.webp', hero: 'band' },
-  { slug: 'intach-heritage-rally', label: 'INTACH Heritage Rally', group: 'YAAN DETAILS', background: 'procession-teal.webp', hero: 'overlay', tagline: 'A Grand Heritage & Cult Carnival, in tribute to Dr. APJ Abdul Kalam.' },
-  { slug: 'case-study-anantha-padmanabha-swamy-temple', label: 'Case Study: Anantha Padmanabha Swamy Temple', group: 'YAAN DETAILS', background: 'temple-orange.webp', hero: 'split', tagline: 'Mysteries, history and heritage — investigated, not toured.' },
-  { slug: 'crafting-kerala', label: 'Crafting Kerala', group: 'YAAN DETAILS', background: 'folk-orange.webp', hero: 'band', tagline: 'The age-old handicrafts of Kerala, studied and enterprised on a global note.' },
-  { slug: 'ecology-at-gods-own-country', label: "Ecology @ God's Own Country", group: 'YAAN DETAILS', background: 'folk-green.webp', hero: 'overlay', tagline: 'Experiencing Kerala\'s ecology from inside its villages.' },
-  { slug: 'kathakali-festival', label: 'Kathakali Festival', group: 'YAAN DETAILS', background: 'dance-pink.webp', hero: 'split', tagline: 'The Great Indian Dancing Festival — three classical forms, one dance drama.' },
+  { slug: 'events-off-train', label: 'Events off Train', group: 'YAAN DETAILS', background: 'temple-green.webp', hero: 'overlay', tagline: 'Nine ways Thiruvananthapuram becomes the classroom.' },
 
   // PROGRAM
   { slug: 'specific-features', label: 'Specific Features', group: 'PROGRAM', background: 'folk-green-alt.webp', hero: 'band', tagline: 'Ten reasons the Yaan is not a trip.' },
@@ -56,6 +59,8 @@ export const MORE_PAGES: SitePage[] = [
   // so the standalone page carries the same artwork.
   { slug: 'faqs', label: 'FAQs', group: 'PROGRAM', background: 'portraits-teal.webp', hero: 'band', tagline: 'Everything students, parents and institutions ask.' },
   { slug: 'contact-us', label: 'Contact Us', group: 'PROGRAM', background: 'deities-teal.webp', hero: 'split', tagline: 'Interested in becoming a YAANIK? We would love to hear from you.' },
+  // The content document's closing statement, which belongs to no other page.
+  { slug: 'come-back-different', label: 'Come Back Different', group: 'PROGRAM', background: 'dance-orange.webp', hero: 'overlay', tagline: 'Where the journey becomes the classroom.' },
 
   // COMMUNITY
   { slug: 'sponsors-and-associate-institutes', label: 'Sponsors & Associate Institutes', group: 'COMMUNITY', background: 'deities-pink.webp', hero: 'overlay', tagline: 'Our institutional ecosystem across education, government, culture and heritage.' },

@@ -22,10 +22,10 @@ export default function EventsOnTrain() {
               every participating college, so no one travels only with the people they arrived with.
             </p>
           </div>
-          <div className="bg-midnight text-white rounded-[28px] p-8 md:p-10">
-            <div className="font-label font-bold text-[52px] md:text-[68px] leading-none text-golden">1</div>
-            <div className="text-[11px] tracking-[0.18em] font-bold text-white/60 mt-2">MENTOR PER TEAM</div>
-            <p className="text-[15px] leading-relaxed text-white/70 mt-4">
+          <div className="bg-white rounded-[28px] p-8 md:p-10 border border-black/5 shadow-[0_18px_50px_rgba(8,27,51,0.10)]">
+            <div className="font-label font-bold text-[52px] md:text-[68px] leading-none text-saffron">1</div>
+            <div className="text-[11px] tracking-[0.18em] font-bold text-saffron mt-2">MENTOR PER TEAM</div>
+            <p className="text-[15px] leading-relaxed text-black/60 mt-4">
               Mentors come from the corporate field and elite institutions — entrepreneurs, HR managers, developers, project
               managers, technical leads and resource persons with innovative creative backgrounds.
             </p>
@@ -57,8 +57,8 @@ export default function EventsOnTrain() {
 
       <Section tone="white">
         <Callout>
-          <div className="text-[11px] tracking-[0.18em] font-bold text-golden">TO &amp; FRO JOURNEY</div>
-          <h3 className="font-head font-extrabold text-[26px] md:text-[34px] leading-tight mt-3 max-w-[820px]">
+          <div className="text-[11px] tracking-[0.18em] font-bold text-emerald">TO &amp; FRO JOURNEY</div>
+          <h3 className="font-head font-extrabold text-[26px] md:text-[34px] leading-tight text-midnight mt-3 max-w-[820px]">
             The train is not the gap between two places. It is the first venue of the Yaan.
           </h3>
         </Callout>
