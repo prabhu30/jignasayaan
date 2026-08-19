@@ -1,9 +1,10 @@
 'use client'
 
-import { useSiteUI } from '@/components/SiteUI'
+import { useSiteUIOptional } from '@/components/SiteUI'
 
 export default function TopEyebrow() {
-  const { openRegister } = useSiteUI()
+  // Present on the one-pager, absent on the standalone pages.
+  const ui = useSiteUIOptional()
 
   return (
     <div className="w-full bg-midnight text-ivory text-[11px] tracking-[0.18em] font-semibold py-2.5 px-4 md:px-6 lg:px-8 flex justify-between items-center relative z-50">
@@ -16,7 +17,12 @@ export default function TopEyebrow() {
         <span className="flex items-center gap-2"><i className="ri-mail-line text-[14px] opacity-80"></i> yaan@jignasayaan.in</span>{' '}
         <a href="https://www.instagram.com/jignasa_artverse/" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:opacity-100 hover:text-golden transition"><i className="ri-instagram-line text-[14px] opacity-80"></i> @jignasa_artverse</a>
       </div>
-      <a  href="#" onClick={(e) => { e.preventDefault(); openRegister() }} className="bg-saffron text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest hover:bg-[#e07d1f] transition">APPLY NOW →</a>
+      {/* /register is the real destination; where the modal exists it intercepts the click. */}
+      <a
+        href="/register"
+        onClick={ui ? (e) => { e.preventDefault(); ui.openRegister() } : undefined}
+        className="bg-saffron text-white px-4 py-1.5 rounded-full text-[11px] font-bold tracking-widest hover:bg-[#e07d1f] transition"
+      >APPLY NOW →</a>
     </div>
   )
 }

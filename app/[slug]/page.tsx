@@ -2,6 +2,7 @@ import type { Metadata } from 'next'
 import { notFound } from 'next/navigation'
 
 import Navbar from '@/components/sections/Navbar'
+import TopEyebrow from '@/components/sections/TopEyebrow'
 import PageCredits from '@/components/PageCredits'
 import { PageHero } from '@/components/page/Blocks'
 import { PAGE_CONTENT, PAGE_KICKER } from '@/components/pages/registry'
@@ -49,6 +50,7 @@ export default async function SitePageRoute({ params }: { params: Promise<{ slug
       </div>
 
       <div className="relative z-10">
+        <TopEyebrow />
         <Navbar />
         <PageHero page={page} kicker={PAGE_KICKER[page.slug]} />
         {Content ? (

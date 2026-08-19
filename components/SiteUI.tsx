@@ -29,6 +29,15 @@ export function useSiteUI() {
   return ctx
 }
 
+/**
+ * Null outside a provider instead of throwing. For chrome that renders both on the
+ * one-pager, where the modals exist, and on the standalone pages, where they do not —
+ * such components fall back to a real link rather than a modal.
+ */
+export function useSiteUIOptional() {
+  return useContext(Ctx)
+}
+
 export function SiteUIProvider({ children }: { children: React.ReactNode }) {
   const [videoOpen, setVideoOpen] = useState(false)
   const [lightboxSrc, setLightboxSrc] = useState<string | null>(null)
